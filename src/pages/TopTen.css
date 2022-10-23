@@ -1,0 +1,16 @@
+.toptiens{
+    background-color: #2f2f3b;
+    margin-bottom: 12px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.held{
+    background-color: yellow;
+}
+
+.posts{
+    background-color: #ED1D24;
+}

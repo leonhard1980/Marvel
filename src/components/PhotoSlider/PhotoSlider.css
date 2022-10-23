@@ -1,0 +1,152 @@
+.topplaatje1 {
+    position: relative;
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('../../assets/sliderplaatjes/header01.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    line-height: 1.5;
+}
+.topplaatje2 {
+    position: relative;
+    width: 100%;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('../../assets/sliderplaatjes/header02.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    line-height: 1.5;
+}
+
+.topplaatje3 {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('../../assets/sliderplaatjes/header03.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    line-height: 1.5;
+}
+
+.topplaatje4 {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('../../assets/sliderplaatjes/header04.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    line-height: 1.5;
+}
+
+.topplaatje5 {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('../../assets/sliderplaatjes/header05.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    line-height: 1.5;
+}
+
+.topplaatje6 {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('../../assets/sliderplaatjes/header06.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    line-height: 1.5;
+}
+
+.topplaatje7 {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('../../assets/sliderplaatjes/header07.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    line-height: 1.5;
+}
+
+.topplaatje8 {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('../../assets/sliderplaatjes/header08.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    line-height: 1.5;
+}
+
+.topplaatje9 {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('../../assets/sliderplaatjes/header09.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    line-height: 1.5;
+}
+
+.topplaatje10 {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('../../assets/sliderplaatjes/header10.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    line-height: 1.5;
+}
+
+.topplaatje11 {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('../../assets/sliderplaatjes/header11.jpg') no-repeat center fixed;
+    background-size: cover;
+    color: white;
+    line-height: 1.5;
+}
