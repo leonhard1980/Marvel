@@ -38,7 +38,7 @@ li{
     background-color: #2f2f3b;
     display: flex;
     flex-direction: column;
-  /*  background: url('../assets/scale_large.jpg') fixed;*/
+    background: url('../assets/scale_large.jpg') fixed;
 
 }
 

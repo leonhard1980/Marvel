@@ -1,7 +1,5 @@
 import React from "react";
 import './YourHero.css';
-import {query} from
-import SearchBar from "./searchBar/SearchBar";
 
 /* in de TopTen staat
 * een volledig get-lijst van een held.

@@ -22,7 +22,7 @@ function App() {
            <Route  path="/topten">
                <TopTen />
            </Route>
-           <Route path="/findyourhero">
+           <Route path="/findyourhero/:blogId">
                <FindYourHero />
            </Route>
            <Route  path="/whonevermet">

@@ -1,0 +1,47 @@
+.herokaartje{
+    background-color: #03b5aa;
+    width: 400px;
+    height: 70vh;
+    background: url('../../assets/background.jpg') no-repeat center center;
+    margin: 21px;
+    border-radius: 4px;
+    padding-top: 11px;
+    padding-left: 11px;
+    padding-right: 11px;
+}
+
+
+.persoonsgegevens{
+    background-color: rgba(215, 0, 0, 0.3);
+    margin: 12px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 4px;
+}
+
+.gevechtsgegevens{
+    background-color: rgba(211, 0, 0, 0.3);
+    margin: 12px;
+    color: #FFFFFF;
+    padding-left: 12px;
+    border-radius: 4px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.heldenplaatje{
+    background-color: #03b5aa;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+.naw{
+    margin: 12px;
+    color: #FFFFFF;
+}
+
+.ptje{
+    margin-bottom: 6px;
+    margin-top: 4px;
+    font-size: 0.9em;
+}

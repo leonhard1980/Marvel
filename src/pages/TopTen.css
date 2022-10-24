@@ -1,16 +1,48 @@
-.toptiens{
-    background-color: #2f2f3b;
-    margin-bottom: 12px;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    width: 40%;
+:root {
+    --clr-neon: hsl(239, 58%, 27%);
+    --clr-bg: hsl(323 21% 16%);
 }
 
-.held{
-    background-color: yellow;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.lijsten{
+    background-color: rgba(215, 0, 0, 0.3);
 }
 
 .posts{
     background-color: #ED1D24;
+    background: url('../assets/sliderplaatjes/panther.jpg') ;
+}
+
+.knoppen-container{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-self: center;
+    background-color: #2f2f3b;
+    padding: 12px;
+    padding-bottom: 30px;
+    color: white;
+    line-height: 1.5;
+
+}
+
+.ttbutton{
+    font-size: 0.7rem;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0.25rem 1em;
+    border:  none;
+    border-radius: 0.15em;
+    margin-right: 2px;
+    font-family: "Arial Black";
+    background-color: black;
+    color: #03b5aa;
+
 }
