@@ -2,17 +2,14 @@ import React, {useEffect, useState} from "react";
 import Bumper from "../components/bumper/Bumper";
 import axios from 'axios';
 import './TopTen.css';
-import SearchBar from "../components/searchBar/SearchBar";
 import {Link} from "react-router-dom";
-
 
 function Topten() {
 const [yourHero, setYourHero] = useState({});
-const [searchQuerie, setSearchQuerie] = useState('');
 const [status, setStatus] = useState('');
 
-   useEffect(() => {async function fetchHeroData(){
 
+    useEffect(() => {async function fetchHeroData(){
        try {
            const response = await axios.get
            ('https://akabab.github.io/superhero-api/api/all.json');
@@ -23,7 +20,6 @@ const [status, setStatus] = useState('');
            })
            console.log(status)
            console.log(response.data)
-
            TopTenLists(gefilterdeHelden);
        } catch(e){
            console.error(e);
@@ -32,46 +28,37 @@ const [status, setStatus] = useState('');
    }  fetchHeroData();
        }, [status]) ;
 
-function TopTenLists(heroList){
-    if(status === "Speed"){
-        return setYourHero(heroList.sort((b,a) => a.powerstats.speed - b.powerstats.speed));
-    } else if (status === "Slow"){
-       return setYourHero(heroList.sort((a,b) => a.powerstats.speed - b.powerstats.speed));
-    } else if (status === "Strong"){
-        return setYourHero(heroList.sort((b,a) => a.powerstats.power - b.powerstats.power));
-    } else if (status === "Weak"){
-        return setYourHero(heroList.sort((a,b) => a.powerstats.power - b.powerstats.power));
-    } else if (status === "Intelligence"){
-        return setYourHero(heroList.sort((b,a) => a.powerstats.intelligence - b.powerstats.intelligence));
-    } else if (status === "Stupidity"){
-        return setYourHero(heroList.sort((a,b) => a.powerstats.intelligence - b.powerstats.intelligence));
-    } else if (status === "Fight"){
-        return setYourHero(heroList.sort((b,a) => a.powerstats.combat - b.powerstats.combat));
-    } else if (status === "FightBad"){
-        return setYourHero(heroList.sort((a,b) => a.powerstats.combat - b.powerstats.combat));
-    } else if (status === "Durability"){
-        return setYourHero(heroList.sort((b,a) => a.powerstats.durability - b.powerstats.durability));
-    } else if (status === "DurabilityBad"){
-        return setYourHero(heroList.sort((a,b) => a.powerstats.durability - b.powerstats.durability));
-    }  else if (status === "Tallest"){
-        return
-        let array = [];
-        setYourHero(heroList.map((sortTallest) => array.push));
-        // je maakt een let met array. lege array let array = []; Dan de map methode. Op de plek van de console log -> array.push(hier sort tallest.appearance.slice (niet de sort))
-
-/*
-        setYourHero(heroList.map((sortTallest) => console.log(sortTallest.appearance.height.slice(1,2).sort((a,b) => a - b ))));
-*/
-
-    } else if (status === "Shortest") {
-        return setYourHero(heroList.sort((a, b) => a.appearance.height[1] - b.appearance.height[1]));
-    } else if (status === "Heaviest"){
-        return setYourHero(heroList.sort((b,a) => a.appearance.weight[1] - b.appearance.weight[1]));
-    } else if (status === "Lightest") {
-        return setYourHero(heroList.sort((a, b) => a.appearance.weight[1] - b.appearance.weight[1]));
+    function TopTenLists(heroList) {
+        switch (status) {
+            case 'Speed' : return setYourHero(heroList.sort((b, a) => a.powerstats.speed - b.powerstats.speed));
+                break;
+            case 'Slow': return setYourHero(heroList.sort((a, b) => a.powerstats.speed - b.powerstats.speed));
+                break;
+            case 'Strong' : return setYourHero(heroList.sort((b, a) => a.powerstats.power - b.powerstats.power));
+                break;
+            case "Weak": return setYourHero(heroList.sort((a, b) => a.powerstats.power - b.powerstats.power));
+                break;
+            case 'Intelligence' : return setYourHero(heroList.sort((b, a) => a.powerstats.intelligence - b.powerstats.intelligence));
+                break;
+            case 'Stupidity': return setYourHero(heroList.sort((a, b) => a.powerstats.intelligence - b.powerstats.intelligence));
+                break;
+            case 'Fight' :  return setYourHero(heroList.sort((b, a) => a.powerstats.combat - b.powerstats.combat));
+                break;
+            case 'FightBad' : return setYourHero(heroList.sort((a, b) => a.powerstats.combat - b.powerstats.combat));
+                break;
+            case 'Durability' : return setYourHero(heroList.sort((b, a) => a.powerstats.durability - b.powerstats.durability));
+                break;
+            case 'DurabilityBad' : return setYourHero(heroList.sort((a, b) => a.powerstats.durability - b.powerstats.durability));
+                break;
+           case 'Tallest' : return setYourHero(heroList.sort((a, b) => a.appearance.height[1] - b.appearance.height[1]));
+                break;
+            case 'Shortest' : return setYourHero(heroList.sort((a, b) => a.appearance.height[1] - b.appearance.height[1]));
+                break;
+            case 'Heaviest' :  return setYourHero(heroList.sort((b, a) => a.appearance.weight[1] - b.appearance.weight[1]));
+                break;
+            case 'Lightest' : return setYourHero(heroList.sort((a, b) => a.appearance.weight[1] - b.appearance.weight[1]));
+        }
     }
-
-}
 
 
 
@@ -80,7 +67,7 @@ function TopTenLists(heroList){
 
             <Bumper
                 classname="bumper3"
-                tekst="Zoek je favoriete superheld"
+                tekst="Zoek je favoriete superheld (buttons, lelijk, omdat buttons uit de css van Register en Login aangeroepen wordt)"
             />
 
          <span className="knoppen-container">
@@ -192,7 +179,7 @@ function TopTenLists(heroList){
                  <div className="posts">
                      <h1>Hier is jouw Top Tien: {yourHero.length}</h1>
                      <ol>
-                         {yourHero.slice(0,10).map((posts) => {
+                         {yourHero.slice(0,100).map((posts) => {
                              return <li className="lijsten">
                                  <Link to={`/findyourhero/${posts.id}`}>
                                  <p> naam: {posts.name} </p>
@@ -200,7 +187,7 @@ function TopTenLists(heroList){
 {/*
                                  //hier een link omheen zetten met useParams, die informatie van held.id weer gebruikt als api call
 */}
-                                 {status === "Speed" && "Snelheid: " + posts.powerstats.speed}
+                                 {status === "Speed" && "Snelheid: " + posts.powerstats.speed }
                                  {status === "Slow" && "Sneldheid: " + posts.powerstats.speed}
                                  {status === "Strong" && "Kracht: " + posts.powerstats.power}
                                  {status === "Weak" && "Kracht: " + posts.powerstats.power}
@@ -241,7 +228,7 @@ function TopTenLists(heroList){
          }
 
 
-         <SearchBar searchHero={setSearchQuerie} />
+
 
             </>
     );

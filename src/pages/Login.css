@@ -1,0 +1,46 @@
+.container{
+    background-color: #ED1D24;
+    background-image: url('../assets/achtergrond01.jpg');
+    margin: 23px;
+    border-radius: 5px;
+    padding: 13px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    box-shadow: 4px 4px 8px #181818;
+}
+
+.textfield{
+    border: none;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 8px;
+    padding: 4px;
+    font-family: "Arial Black";
+}
+
+.achtergrondlogin{
+    background: url('../assets/background4.jpg') no-repeat ;
+    color: #FFFFFF;
+    height: 100vh;
+}
+
+.woordjes{
+    color: #FFFFFF;
+    font-family: "Arial Black";
+    margin-left: 4px;
+}
+
+/*button{
+    background-color: #ED1D24;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    width: 55px;
+    margin: 12px;
+    height: 24px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-family: "Arial Black";
+}*/

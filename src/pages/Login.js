@@ -1,7 +1,17 @@
 import { useForm } from 'react-hook-form';
 import React from "react";
 import {Link, useHistory} from "react-router-dom";
-import axios from "axios";
+import './Login.css';
+import Bumper from "../components/bumper/Bumper";
+/*
+De informatie die de gebruiker invult wordt verzameld en als postrequest opgestuurd.
+    de servers stuurt een token terug. Daarna is de rest van de logica in de context.
+    Token:
+    - in Local Stoarage plaatsen
+    De juiste gebruikersdata in de state zetten.
+    Authenticatie moet nu op true staan.
+
+    */
 
 function Login() {
     const [checktandc, toggleChecktandc] = React.useState(false);
@@ -29,15 +39,18 @@ function Login() {
 
     return(
         <>
+<div className="achtergrondlogin">
+        <Bumper
+            classname="bumper2"
+            tekst="Log je nu in om mee te doen!"
+        />
 
-            <h1> FORM IS NOT CONNECTED. MAAR WAAROM NIET???</h1>
-        <div>
+          <article className="buitenste-container">
+
             <form className="container"
                   onSubmit={handleSubmit(onFormSubmit)}>
-                <fieldset>
-                    <p></p>
-                    <legend>Schrijf je in</legend>
 
+                <span className="woordjes">
                     email:
                     <input
                         className="textfield"
@@ -47,7 +60,8 @@ function Login() {
                         //het email-type, check automatisch al op @, dus hier heb ik geen extra validatie ingebouwd.
                     />
                     {errors.email && <p>{errors.email.message}</p>}
-
+                </span>
+                <span className="woordjes">
                     Password:
                     <input
                         className="textfield"
@@ -56,8 +70,8 @@ function Login() {
                         {...register("password", {required: "Naam is verplicht", maxLength:  {value: 80, message: "Uw naam mag niet langer zijn dan 80 karakters", }})}
                     />
                     {errors.password && <p>{errors.password.message}</p>}
+                </span>
 
-                </fieldset>
 
                 <p className="checkboxcss">
                     <input
@@ -66,21 +80,28 @@ function Login() {
                         checked={checktandc}
                         onChange={() => toggleChecktandc(!checktandc)}
                     />
-                    Ik ben akkoord met de algemene voorwaarden
+                    <span className="woordjes">
+                    Akkoord met de voorwaarden
+                    </span>
                 </p>
                 <button
                     disabled={!checktandc}
                     type="submit"
                     onClick={handleClick}
                 >
-                    Schrijf mij in!
+                    Send!
                 </button>
+
+                <article>
+                    <Link to="/"> Doorlinken?></Link>
+                </article>
             </form>
 
-            <article>
-                <Link to="/"> Terug naar Home></Link>
-            </article>
-            </div>
+
+
+          </article>
+            <h1> FORM IS NOT CONNECTED. MAAR WAAROM NIET???</h1>
+</div>
         </>
     );
 }

@@ -1,13 +1,15 @@
 .herokaartje{
     background-color: #03b5aa;
     width: 400px;
-    height: 70vh;
+    height: 664px;
     background: url('../../assets/background.jpg') no-repeat center center;
-    margin: 21px;
-    border-radius: 4px;
+    margin-top: 4px;
+    margin-left: 21px;
+    border-radius: 5px;
     padding-top: 11px;
     padding-left: 11px;
     padding-right: 11px;
+    box-shadow: 4px 4px 6px #000000;
 }
 
 

@@ -5,12 +5,11 @@ import {Switch, Route, } from "react-router-dom";
 import FindYourHero from "./pages/FindYourHero";
 import Register from "./pages/Register";
 import TopTen from "./pages/TopTen";
-import AboutUs from "./pages/AboutUs";
-import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs/AboutUs";
+import Home from "./pages/Home/Home";
 import WhichHeroInComic from "./pages/Comic";
 import WhoNeverMet from "./pages/WhoNeverMet";
 import Login from "./pages/Login";
-
 
 
 function App() {

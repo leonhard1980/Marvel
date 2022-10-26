@@ -1,5 +1,8 @@
 import React, { useState, useEffect }from "react";
 import axios from "axios";
+import './WhoNeverMet.css';
+import Bumper from "../components/bumper/Bumper";
+import SearchBar from "../components/searchBar/SearchBar";
 
 function WhoNeverMet() {
 
@@ -24,11 +27,18 @@ function WhoNeverMet() {
 
     return(
         <>
+            <article className="outer-container">
+                <Bumper
+                    classname="bumper1"
+                    tekst="Welke Superhelden kwamen elkaar nooit tegen?"
+                />
         <div>
             Welke Helden zijn elkaar nooit tegengekomen?
         </div>
 
+                <SearchBar/>
 
+            </article>
         </>
     );
 }

@@ -1,0 +1,14 @@
+.achtergrond{
+    background: url('../assets/background4.jpg') no-repeat ;
+    color: #FFFFFF;
+    height: 100vh;
+}
+
+.uitslag{
+    background-color: #2f2f3b;
+    margin: 23px;
+    padding: 23px;
+    box-shadow: 4px 4px 8px #181818;
+
+
+}

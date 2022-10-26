@@ -7,16 +7,19 @@ installs
 - npm install jwt-decode (voor authenticatie)
 - npm install sass --save-dev (voor SASS en SCSS, nog niet gedaan)
 - npm install react-hook-form
+- npm install jwt-decode
+
 
 is het zo dat:
 - npx nodemon spread-operator.js een paginaatje standalone maakt?
+
 
 
 Maak voor gebruik een .env bestandje aan ter hoogste van de gitignore in de applicatie
 vul deze met eigen key conform de syntax op .evn.dist 
 Draai een npm run build in de terminal om deze te installeren in het project.
 Deze key is te verkrijgen door in te schrijven op: https://developer.marvel.com/docs
-
+Schrijf deze apikey in je eigen .evn bestand zoals beschreven in .evn.dist
 
 - FUNCTIONALITEITEN
 1) ZOEK JE SUPERHELD (EN MAAK EEN MOOI PLAATJE DAARVAN)
@@ -46,3 +49,5 @@ _DEZE APPLICATIE MAAKT GEBRUIK VAN 2 API'S_
 - MY PUBLIC KEY: 8a621d214f6703c92354d117a0cdb893
 - MY PRIVATE KEY : ee113a5aa21a594a97eeda96adc86766a7b56358
 - RATE LIMIT: 3000
+Hierboven staan de public en private keys. Normaal gesproken push je die niet mee.
+Dan zou ik schrijven: maak een account aan bij: https://developer.marvel.com/docs voor een eigen APIKEY

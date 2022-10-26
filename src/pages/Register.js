@@ -1,6 +1,10 @@
 import React from "react";
 import {Link, useHistory} from "react-router-dom";
 import {useForm} from "react-hook-form";
+import './Register.css';
+import Bumper from "../components/bumper/Bumper";
+import axios from "axios";
+
 
 function Register() {
 
@@ -19,19 +23,20 @@ function Register() {
 
     return(
         <>
-        <div>
-            Registreer je hier
-        </div>
-
+<div className="achtergrondregister">
+            <Bumper
+                classname="bumper1"
+                tekst="Log je nu in om mee te doen!"
+            />
             <h1> FORM IS NOT CONNECTED. MAAR WAAROM NIET???</h1>
             <div>
                 <form className="container"
                       onSubmit={handleSubmit(onFormSubmit)}>
-                    <fieldset>
-                        <p></p>
-                        <legend>Schrijf je in</legend>
+
+                <span className="woordjes">
 
                         Gebruikersnaam:
+                </span>
                         <input
                             className="textfield"
                             type="text"
@@ -40,7 +45,9 @@ function Register() {
                         />
                         {errors.name && <p>{errors.name.message}</p>}
 
+                    <span className="woordjes">
                         email:
+                    </span>
                         <input
                             className="textfield"
                             type="email"
@@ -50,7 +57,9 @@ function Register() {
                         />
                         {errors.email && <p>{errors.email.message}</p>}
 
+                    <span className="woordjes">
                         Password:
+                        </span>
                         <input
                             className="textfield"
                             type="password"
@@ -59,7 +68,6 @@ function Register() {
                         />
                         {errors.password && <p>{errors.password.message}</p>}
 
-                    </fieldset>
 
                     <p className="checkboxcss">
                         <input
@@ -68,14 +76,16 @@ function Register() {
                             checked={checktandc}
                             onChange={() => toggleChecktandc(!checktandc)}
                         />
+                        <span className="woordjes">
                         Ik ben akkoord met de algemene voorwaarden
+                        </span>
                     </p>
                     <button
                         disabled={!checktandc}
                         type="submit"
                         onClick={handleClick}
                     >
-                        Schrijf mij in!
+                        Send
                     </button>
                 </form>
 
@@ -84,9 +94,12 @@ function Register() {
                 </article>
             </div>
 
-
+</div>
             </>
     );
 }
 
 export default Register;
+
+
+

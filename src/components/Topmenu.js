@@ -15,9 +15,9 @@ function TopMenu() {
                 </NavLink>
 
                 <ul>
-                    <li>
+                    <li className="links">
                         <NavLink to="/topten"
-                                 activeClassName="active-link"> Top Ten's </NavLink>
+                                 activeClassName="active-link"> Top 100 </NavLink>
                     </li>
 
                     <li>

@@ -1,25 +1,25 @@
 import React from "react";
 import './HeroCard.css';
-import heldfoto from '../../assets/heldenplaatjes/1-a-bomb sm.jpg';
 
-
-function HeroCard({heroName, fullName, height, weight, placeOfBirth, alignment, publisher, duration, combat, intelligence, speed, power, strength}) {
+function HeroCard( { heldfoto, heroName, fullName, height, weight, placeOfBirth, alignment, publisher, occupation, duration, combat, intelligence, speed, power, strength}) {
     return(
         <>
+
 
             <div className="herokaartje">
             <h1 className="naam"> {heroName} </h1>
                     <div className="persoonsgegevens">
-                            <span className="heldenplaatje">
-                                <img src={heldfoto}  />
+                           <span className="heldenplaatje">
+                                <img src={heldfoto} alt="muckshot" />
                             </span>
                             <span className="naw">
                             <p className="ptje"> Volledige Naam: {fullName} </p>
                             <p className="ptje"> Lengte: {height} </p>
                             <p className="ptje"> Gewicht: {weight} </p>
                             <p className="ptje"> Geboorteplaats: {placeOfBirth} </p>
-                            <p className="ptje"> Hoort bij: the {alignment} guys</p>
+                            <p className="ptje"> Hoort bij: The {alignment} guys</p>
                             <p className="ptje"> publisher: {publisher} </p>
+                            <p className="ptje"> Beroep: {occupation} </p>
                             </span>
                     </div>
 
