@@ -1,7 +1,8 @@
 import React from "react";
 import './HeroCard.css';
 
-function HeroCard( { heldfoto, heroName, fullName, height, weight, placeOfBirth, alignment, publisher, occupation, duration, combat, intelligence, speed, power, strength}) {
+function HeroCard( { heldfoto, heroName, fullName, height, weight, placeOfBirth,
+                       alignment, publisher, occupation, duration, combat, intelligence, speed, power, strength}) {
     return(
         <>
 
@@ -29,8 +30,8 @@ function HeroCard( { heldfoto, heroName, fullName, height, weight, placeOfBirth,
                             <p className="ptje"> Gevechtsvermogen: {combat} punten</p>
                             <p className="ptje"> Intelligentie: {intelligence} punten</p>
                             <p className="ptje"> Snelheid: {speed}  punten</p>
-                            <p className="ptje"> Kracht: {power}  punten</p>
-                            <p className="ptje"> Power: {strength} punten</p>
+                            <p className="ptje"> Power: {power}  punten</p>
+                            <p className="ptje"> Kracht: {strength} punten</p>
                     </div>
 
 

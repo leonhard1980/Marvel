@@ -3,9 +3,7 @@ import './SearchBar.css';
 
 
 function SearchBar(searchHero) {
-
     const [query, setQuery] = useState('');
-
     function onFormSubmit(e){
         e.preventDefault();
         searchHero(query);

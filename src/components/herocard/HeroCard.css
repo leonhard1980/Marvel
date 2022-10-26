@@ -1,7 +1,7 @@
 .herokaartje{
     background-color: #03b5aa;
-    width: 400px;
-    height: 664px;
+    width: 420px;
+    height: 645px;
     background: url('../../assets/background.jpg') no-repeat center center;
     margin-top: 4px;
     margin-left: 21px;
@@ -15,7 +15,7 @@
 
 .persoonsgegevens{
     background-color: rgba(215, 0, 0, 0.3);
-    margin: 12px;
+    margin: 8px;
     display: flex;
     flex-direction: row;
     border-radius: 4px;
@@ -23,7 +23,7 @@
 
 .gevechtsgegevens{
     background-color: rgba(211, 0, 0, 0.3);
-    margin: 12px;
+    margin: 8px;
     color: #FFFFFF;
     padding-left: 12px;
     border-radius: 4px;

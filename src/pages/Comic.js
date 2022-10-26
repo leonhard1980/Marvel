@@ -1,38 +1,44 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import SearchBar from "../components/searchBar/SearchBar";
 import axios from "axios";
 import './Comic.css';
 import jwt_decode from 'jwt-decode';
+import {Link} from "react-router-dom";
 
 
 
 
 function WhichHeroInComic() {
-/*    const token = 214f3ccc2da6b6ad008517ceaf43663a;*/
-
-/*
-    const decoded = jwt_decode(token);
-*/
-/*
-    process.env.REACT_APP_API_KEY
-*/
     const [yourComicHero, setYourComicHero] = useState({});
-const publicKey = '8a621d214f6703c92354d117a0cdb893';
-const privateKey = 'ee113a5aa21a594a97eeda96adc86766a7b56358';
+    const publicKey = '8a621d214f6703c92354d117a0cdb893';
+    const privateKey = 'ee113a5aa21a594a97eeda96adc86766a7b56358';
     const [searchQuerie, setSearchQuerie] = useState('');
+    const [newEndpoint, setNewEndpoint] = useState('');
 
+    useEffect(() => {
+        async function fetchUserData() {
+            try {
+                const response = await axios.get
+                (`http://gateway.marvel.com/v1/public/characters?name=${searchQuerie}&apikey=${process.env.REACT_APP_API_KEY}`);
+                setYourComicHero(response.data);
+                console.log(response.data);
+            } catch (e) {
+                console.error(e);
+            }
+        } fetchUserData();
+    }, [searchQuerie]);
 
-    async function fetchUserData(){
+/*    async function fetchSeriesData(){
         try {
             const response = await axios.get
-            (`http://gateway.marvel.com/v1/public/comics?ts=1&apikey=214f3ccc2da6b6ad008517ceaf43663a`);
-        setYourComicHero(response.data);
-        console.log(response.data);
-            setYourComicHero(response.data);
+            (`${newEndpoint}apikey=214f3ccc2da6b6ad008517ceaf43663a`);
+                       console.log(response.data);
         } catch(e){
             console.error(e);
-       }
-    }
+        }
+    }*/
+
+
     return(
         <>
             <div className="achtergrond">
@@ -44,10 +50,10 @@ const privateKey = 'ee113a5aa21a594a97eeda96adc86766a7b56358';
                 <p>en zie: https://developer.marvel.com/documentation/generalinfo </p>
             </div>
 
-            <button className="ttbutton"
+{/*            <button className="ttbutton"
                     onClick={fetchUserData}>
                 Klik
-            </button>
+            </button>*/}
 
 
 
@@ -55,20 +61,16 @@ const privateKey = 'ee113a5aa21a594a97eeda96adc86766a7b56358';
             {Object.keys(yourComicHero).length > 0 &&
             <>
             <h1> er komt data binnen. Lets check! </h1>
-{/*
+                <p> Hier moet met useParam nog een doorlink naar het mysterieuze object. resourceURI : "http://gateway.marvel.com/v1/public/series/13082" </p>
+                <p> Voor iedere serie is het handig om een serie-componentje te maken.</p>
 
-           <div> {yourComicHero.results.8.series.name} </div>
 
-*/}
 
             </>
             }
             </article>
 
-
-            <SearchBar/>
                 <SearchBar searchHero={setSearchQuerie} />
-
             </div>
         </>
     );

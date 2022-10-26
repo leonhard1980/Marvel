@@ -6,7 +6,7 @@ import {useParams} from "react-router-dom";
 import './FindYourHero.css';
 import HeroCard from "../components/herocard/HeroCard";
 import {Link, useHistory} from "react-router-dom";
-import {Images} from "../components/Images";
+import PoundsToKilo from "../components/helpers/PoundsToKilo";
 
 
 // gebruiker typt batman

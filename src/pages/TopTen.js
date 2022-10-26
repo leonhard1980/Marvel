@@ -3,6 +3,7 @@ import Bumper from "../components/bumper/Bumper";
 import axios from 'axios';
 import './TopTen.css';
 import {Link} from "react-router-dom";
+import PoundsToKilo from "../components/helpers/PoundsToKilo";
 
 function Topten() {
 const [yourHero, setYourHero] = useState({});
@@ -14,7 +15,13 @@ const [status, setStatus] = useState('');
            const response = await axios.get
            ('https://akabab.github.io/superhero-api/api/all.json');
            const gefilterdeHelden = response.data.filter((hero) => {
-               if (hero.biography.publisher === 'DC Comics' || hero.biography.publisher === 'Marvel Comics'){
+               if (hero.biography.publisher === 'DC Comics' || hero.biography.publisher === 'Marvel Comics')
+               if (hero.appearance.height[1] !== '0 cm')
+               if (hero.appearance.height[1] !== '0 kg')
+               if(hero.appearance.weight[1] !== '0 kg')
+               if(hero.appearance.height[1] !== '62.5 meters')
+                   if(hero.appearance.height[1] !== '15.2 meters')
+               {
                    return true
                }
            })
@@ -34,9 +41,9 @@ const [status, setStatus] = useState('');
                 break;
             case 'Slow': return setYourHero(heroList.sort((a, b) => a.powerstats.speed - b.powerstats.speed));
                 break;
-            case 'Strong' : return setYourHero(heroList.sort((b, a) => a.powerstats.power - b.powerstats.power));
+            case 'Strong' : return setYourHero(heroList.sort((b, a) => a.powerstats.strength - b.powerstats.strength));
                 break;
-            case "Weak": return setYourHero(heroList.sort((a, b) => a.powerstats.power - b.powerstats.power));
+            case "Weak": return setYourHero(heroList.sort((a, b) => a.powerstats.strength - b.powerstats.strength));
                 break;
             case 'Intelligence' : return setYourHero(heroList.sort((b, a) => a.powerstats.intelligence - b.powerstats.intelligence));
                 break;
@@ -50,13 +57,16 @@ const [status, setStatus] = useState('');
                 break;
             case 'DurabilityBad' : return setYourHero(heroList.sort((a, b) => a.powerstats.durability - b.powerstats.durability));
                 break;
-           case 'Tallest' : return setYourHero(heroList.sort((a, b) => a.appearance.height[1] - b.appearance.height[1]));
+           case 'Tallest' :
+               return setYourHero(heroList.sort((b, a) => a.appearance.height[1].replaceAll(" cm", "") - b.appearance.height[1].replaceAll(" cm", "")));
                 break;
-            case 'Shortest' : return setYourHero(heroList.sort((a, b) => a.appearance.height[1] - b.appearance.height[1]));
+            case 'Shortest' : return setYourHero(heroList.sort((a, b) => a.appearance.height[1].replaceAll(" cm", "") - b.appearance.height[1].replaceAll(" cm", "")));
                 break;
-            case 'Heaviest' :  return setYourHero(heroList.sort((b, a) => a.appearance.weight[1] - b.appearance.weight[1]));
+            case 'Heaviest' :
+                return setYourHero(heroList.sort((b, a) => a.appearance.weight[0].replaceAll(" lb", "") - b.appearance.weight[0].replaceAll(" lb", "")));
                 break;
-            case 'Lightest' : return setYourHero(heroList.sort((a, b) => a.appearance.weight[1] - b.appearance.weight[1]));
+            case 'Lightest' :
+                return setYourHero(heroList.sort((a, b) => a.appearance.weight[0].replaceAll(" lb", "") - b.appearance.weight[0].replaceAll(" lb", "")));
         }
     }
 
@@ -189,8 +199,8 @@ const [status, setStatus] = useState('');
 */}
                                  {status === "Speed" && "Snelheid: " + posts.powerstats.speed }
                                  {status === "Slow" && "Sneldheid: " + posts.powerstats.speed}
-                                 {status === "Strong" && "Kracht: " + posts.powerstats.power}
-                                 {status === "Weak" && "Kracht: " + posts.powerstats.power}
+                                 {status === "Strong" && "Kracht: " + posts.powerstats.strength}
+                                 {status === "Weak" && "Kracht: " + posts.powerstats.strength}
                                  {status === "Intelligence" && "Intelligentie: " + posts.powerstats.intelligence}
                                  {status === "Stupidity" && "Intelligentie: " + posts.powerstats.intelligence}
                                  {status === "Fight" && "Vechtvaardigheid: " + posts.powerstats.combat}
@@ -199,8 +209,8 @@ const [status, setStatus] = useState('');
                                  {status === "DurabilityBad" && "Uithoudingsvermogen: " + posts.powerstats.durability}
                                  {status === "Tallest" && "Lengte: " + posts.appearance.height[1]}
                                  {status === "Shortest" && "Lengte: " + posts.appearance.height[1]}
-                                 {status === "Heaviest" && "Gewicht: " + posts.appearance.weight[1]}
-                                 {status === "Lightest" && "Gewicht: " + posts.appearance.weight[1]}
+                                 {status === "Heaviest" && "Gewicht: " + posts.appearance.weight[0]}
+                                 {status === "Lightest" && "Gewicht: " + posts.appearance.weight[0]}
                              </Link>
                              </li>
                          })}
