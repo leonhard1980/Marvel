@@ -1,6 +1,7 @@
 import React from "react";
 import './Home.css';
 import Bumper from "../../components/bumper/Bumper";
+import SearchHero from "../SearchHero";
 
 
 function Home() {
@@ -14,11 +15,12 @@ Dit is de Home Pagina
 
             <div>
 
+
                 Op deze website vind je alle informatie over jouw favoriete superhelden.
             </div>
 
           </div>
-
+            <SearchHero/>
 
 
         </>

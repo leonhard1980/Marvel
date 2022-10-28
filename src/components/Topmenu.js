@@ -4,35 +4,35 @@ import logo from '../assets/Marvel_Logo.svg.png';
 import './Topmenu.css';
 
 function TopMenu() {
+
     return (
         <nav>
             <div className="nav-container">
-                <NavLink to="/"
+                <NavLink to="/aboutus"
                          activeClassName="active-link">
-                    <img className="plaatje"
+                    <img className="logo"
                          src={logo}
                          alt="logo" />
                 </NavLink>
 
                 <ul>
                     <li className="links">
-                        <NavLink to="/topten"
-                                 activeClassName="active-link"> Top 100 </NavLink>
+                        <NavLink to="/topten" activeClassName="active-link"> Top 100 </NavLink>
                     </li>
 
-                    <li>
+              {/*      <li>
                         <NavLink to="/findyourhero"
                                  activeClassName="active-link"> Find Your Hero </NavLink>
-                    </li>
+                    </li>*/}
 
                     <li>
                         <NavLink to="/whonevermet"
-                                 activeClassName="active-link">They Never Met</NavLink>
+                                 activeClassName="active-link">Search your Hero</NavLink>
                     </li>
 
                     <li>
                         <NavLink to="/whichheroincomic"
-                                 activeClassName="active-link"> Comic </NavLink>
+                                 activeClassName="active-link"> Series </NavLink>
                     </li>
 
                     <li>
@@ -45,10 +45,10 @@ function TopMenu() {
                                  activeClassName="active-link"> Register </NavLink>
                     </li>
 
-                    <li>
+            {/*        <li>
                         <NavLink to="/aboutus"
                                  activeClassName="active-link"> About Us </NavLink>
-                    </li>
+                    </li>*/}
 
 
                 </ul>

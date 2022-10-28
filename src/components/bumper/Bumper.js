@@ -4,7 +4,7 @@ import './Bumper.css';
 function Bumper({tekst, classname}){
     return(
         <div className={classname}>
-            {tekst}
+         <p className="bumpertekst">   {tekst} </p>
         </div>
 
     );

@@ -1,18 +1,20 @@
 .searchbar{
     background-color: #03b5aa;
-    width: 250px;
-    border-radius: 3px;
+    width: 325px;
+    border-radius: 8px;
     border-bottom-right-radius: 24px;
-    margin: 32px;
-    margin-left: 22px;
+    margin: 15px;
+    margin-left: 25px;
+    margin-bottom: 25px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-top: 12px;
-    padding-right: 21px;
+    padding-top: 20px;
+    padding-right: 20px;
     padding-left: 12px;
     padding-bottom: 8px;
     box-shadow: 4px 4px 8px #181818;
+
 
 }
 
@@ -20,19 +22,21 @@
     background-color: #2f2f3b;
     font-family: Marvin;
     color: #FFFFFF;
-    border-radius: 3px;
+    border-radius: 8px;
     border: none;
-    padding: 8px;
-    margin-top: 4px;
+    padding: 12px;
+    margin-top: 8px;
+    margin-left: 8px;
+    align-self: center;
 }
 
 .zoekveld{
     padding-left: 12px;
-    border-radius: 5px;
-    height: 24px;
+    border-radius: 6px;
+    height: 30px;
     border-top: none;
     border-left: none;
     border-right: none;
-    font-size: 16px;
+    font-size: 21px;
     margin: 5px;
 }

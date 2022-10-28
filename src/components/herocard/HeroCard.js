@@ -33,10 +33,6 @@ function HeroCard( { heldfoto, heroName, fullName, height, weight, placeOfBirth,
                             <p className="ptje"> Power: {power}  punten</p>
                             <p className="ptje"> Kracht: {strength} punten</p>
                     </div>
-
-
-
-
             </div>
 
 

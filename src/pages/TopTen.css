@@ -1,48 +1,97 @@
-:root {
-    --clr-neon: hsl(239, 58%, 27%);
-    --clr-bg: hsl(323 21% 16%);
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-.lijsten{
-    background-color: rgba(215, 0, 0, 0.3);
+.response{
+    align-content: center;
 }
 
 .posts{
     background-color: #ED1D24;
-    background: url('../assets/sliderplaatjes/panther.jpg') ;
+    background: url('../assets/background4.jpg') fixed ;
+    padding-top: 63px;
+}
+
+.lijsten{
+    width: 300px;
+    padding: 24px;
+    margin-bottom: 22px;
+    border-radius: 5px;
+    border-bottom-right-radius: 35px;
+    box-shadow: 4px 4px 6px #080808;
+    background: url('../assets/background3.jpeg')
 }
 
 .knoppen-container{
+    background-color: #2f2f3b;
     display: flex;
     flex-direction: row;
     align-self: center;
     align-items: center;
+    padding: 8px;
+    padding-bottom: 8px;
     flex-wrap: wrap;
     align-self: center;
-    background-color: #2f2f3b;
-    padding: 12px;
-    padding-bottom: 30px;
     color: white;
     line-height: 1.5;
-    background: url('../assets/background6.png') no-repeat ;
 }
 
 .ttbutton{
-    font-size: 0.7rem;
+    font-size: 1rem;
     cursor: pointer;
     text-decoration: none;
     padding: 0.25rem 1em;
     border:  none;
-    border-radius: 0.15em;
-    margin-right: 2px;
-    font-family: "Arial Black";
-    background-color: black;
-    color: #03b5aa;
+    font-family: "Marvin";
+    background-color: #2f2f3b;
+    color: #FFFFFF;
+    text-shadow: 4px 4px 6px #000000;
 
+}
+
+.heldplaatje{
+    width: 175px;
+    margin-top: 12px;
+    box-shadow: 2px 4px 6px #080808;
+}
+
+ol {
+    list-style:none;
+    counter-reset:mycounter;
+    padding:0;
+}
+ol li {
+    position:relative;
+    margin-left: 56px;
+    padding:9px 0;
+}
+
+ol li:before {
+    content:counter(mycounter);
+    counter-increment:mycounter;
+    position:absolute;
+    top:-17px;
+    left:-30px;
+    width:55px;
+    height:55px;
+    line-height:55px;
+    border-radius:50%;
+    color:#fff;
+    font-size: 25px;
+    background: #ED1D24;
+    text-align:center;
+}
+
+.au {
+    display:inline-block;
+    border:1px solid #ccc;
+    background:#f2f2f2;
+    border-radius:10px;
+    box-shadow:2px 2px 5px #011c1a;
+    padding:23px;
+}
+
+.hetrestje{
+    background: url('../assets/background02.jpg') repeat ;
+    height: 83vh;
+}
+
+.vaardigheden{
+    font-size: 20px;
 }

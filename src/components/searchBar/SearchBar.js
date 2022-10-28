@@ -2,15 +2,15 @@ import React, {useState} from "react";
 import './SearchBar.css';
 
 
-function SearchBar(searchHero) {
-    const [query, setQuery] = useState('');
+function SearchBar({ setQuery, query}) {
     function onFormSubmit(e){
         e.preventDefault();
-        searchHero(query);
+        console.log(query);
     }
 
     return (
-        <form className="searchbar" onSubmit={onFormSubmit}>
+        <form className="searchbar"
+              onSubmit={onFormSubmit}>
       <input className="zoekveld"
           type="text"
           name="search"

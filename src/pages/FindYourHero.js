@@ -8,11 +8,6 @@ import HeroCard from "../components/herocard/HeroCard";
 import {Link, useHistory} from "react-router-dom";
 import PoundsToKilo from "../components/helpers/PoundsToKilo";
 
-
-// gebruiker typt batman
-// dan een api call naar de ALL
-
-
 export function FindYourHero() {
 
     const [yourHero, setYourHero] = useState({});
@@ -46,9 +41,9 @@ export function FindYourHero() {
 
                 heldfoto={yourHero.images.sm}
                 heroName={yourHero.name}
-                fullName={yourHero.biography.fullName} //if null dan: onbekend
-                height={yourHero.appearance.height[1]} //if null dan: onbekend
-                weight={yourHero.appearance.weight[1]} //if null dan: onbekend
+                fullName={yourHero.biography.fullName}
+                height={yourHero.appearance.height[1]}
+                weight={yourHero.appearance.weight[1]}
                 placeOfBirth={yourHero.biography.placeOfBirth}
                 alignment={yourHero.biography.alignment}
                 occupation={yourHero.work.occupation}
@@ -65,12 +60,6 @@ export function FindYourHero() {
                     <Link to="/topten"> Terug naar Top 100 ></Link>
                 </article>
             </div>
-
-            <PhotoSlider
-                classnaampje="topplaatje11"
-                quote={null}
-                greatmind="We love Superheroes"
-            />
 
 
         </>

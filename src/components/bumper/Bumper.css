@@ -1,10 +1,13 @@
+.bumpertekst{
+    padding: 8px;
+}
 
 .bumper1{
     background-color: #ED1D24;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 33px;
+    height: 45px;
     color: #FFFFFF;
     font-family: Marvin;
     text-shadow: 3px 3px 6px rgba(22, 22, 52, 0.95);
@@ -12,11 +15,12 @@
 }
 
 .bumper2{
+
     background-color: #2f2f3b;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 30px;
+    height: 45px;
     color: #ED1D24;
     font-family: Marvin;
     text-shadow: 3px 3px 6px rgba(22, 22, 52, 0.95);
@@ -28,7 +32,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 30px;
+    height: 45px;
     color: #FFFFFF;
     font-family: Marvin;
     text-shadow: 3px 3px 6px rgba(22, 22, 52, 0.95);

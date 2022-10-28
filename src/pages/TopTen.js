@@ -3,7 +3,6 @@ import Bumper from "../components/bumper/Bumper";
 import axios from 'axios';
 import './TopTen.css';
 import {Link} from "react-router-dom";
-import PoundsToKilo from "../components/helpers/PoundsToKilo";
 
 function Topten() {
 const [yourHero, setYourHero] = useState({});
@@ -15,15 +14,17 @@ const [status, setStatus] = useState('');
            const response = await axios.get
            ('https://akabab.github.io/superhero-api/api/all.json');
            const gefilterdeHelden = response.data.filter((hero) => {
-               if (hero.biography.publisher === 'DC Comics' || hero.biography.publisher === 'Marvel Comics')
+               if (hero.biography.publisher === 'Dark Horse Comics' || hero.biography.publisher === 'Superman Prime One-Million' || hero.biography.publisher === 'Marvel Comics' || hero.biography.publisher === 'DC Comics' )
                if (hero.appearance.height[1] !== '0 cm')
-               if (hero.appearance.height[1] !== '0 kg')
+               if (hero.appearance.height[1] !== '0 kg') // dit filtert een held genaamd 'Dagger' eruit
                if(hero.appearance.weight[1] !== '0 kg')
-               if(hero.appearance.height[1] !== '62.5 meters')
-                   if(hero.appearance.height[1] !== '15.2 meters')
+               if(hero.appearance.height[1] !== '62.5 meters') // dit filtert Giganta eruit
+                   if(hero.appearance.height[1] !== '15.2 meters') // dit een of andere vreemde ork
                {
                    return true
-               }
+               }  else {
+                       return false
+                   }
            })
            console.log(status)
            console.log(response.data)
@@ -76,149 +77,119 @@ const [status, setStatus] = useState('');
      <>
 
             <Bumper
-                classname="bumper3"
-                tekst="Zoek je favoriete superheld (buttons, lelijk, omdat buttons uit de css van Register en Login aangeroepen wordt)"
-            />
+                classname="bumper1"
+                tekst="Zoek jouw favoriete top 100"/>
 
          <span className="knoppen-container">
 
-            <article className="toptiens">
             <button className="ttbutton"
             onClick={() => setStatus("Strong")}>
-               STERKSTE Superhelden
+               Sterkste Superhelden
             </button>
-            </article>
 
-         <article className="toptiens">
              <button className="ttbutton"
                      onClick={() => setStatus("Weak")}>
-                 SLAPSTE Superhelden
+                Slapste Superhelden
              </button>
-         </article>
 
-             <article className="toptiens">
              <button className="ttbutton"
                   onClick={() => setStatus("Speed")}>
-                 SNELSTE Superhelden
+                 Snelste Superhelden
              </button>
-         </article>
 
-         <article className="toptiens">
              <button className="ttbutton"
                      onClick={() => setStatus("Slow")}>
-             LANGZAAMSTE Superhelden
+             Traagste Superhelden
              </button>
-         </article>
 
-
-         <article className="toptiens">
              <button className="ttbutton"
                      onClick={() => setStatus("Intelligence")}>
-                 Slimste Superhelden
+                Slimste Superhelden
              </button>
-         </article>
 
-         <article className="toptiens">
              <button className="ttbutton"
                      onClick={() => setStatus("Stupidity")}>
                  Domste Superhelden
              </button>
-         </article>
 
-         <article className="toptiens">
              <button className="ttbutton"
                      onClick={() => setStatus("Fight")}>
-                BESTE VECHTERS
+                Beste vechters
              </button>
-         </article>
 
-         <article className="toptiens">
              <button className="ttbutton"
                      onClick={() => setStatus("FightBad")}>
-                 SLECHTSTE vechters
+                 Slechtste vechters
              </button>
-         </article>
 
-         <article className="toptiens">
              <button className="ttbutton"
                      onClick={() => setStatus("Durability")}>
-                 Beste uithoudingsvermogen
+               Beste uithoudingsvermogen
              </button>
-         </article>
 
-         <article className="toptiens">
              <button className="ttbutton"
                      onClick={() => setStatus("DurabilityBad")}>
-                SLECHTSTE uithoudingsvermogen
+                Slechtste uithoudingsvermogen
              </button>
-         </article>
 
-         <article className="toptiens">
              <button className="ttbutton"
                      onClick={() => setStatus("Tallest")}>
-                 Klik voor de LANGSTE Helden
+               Langste Helden
              </button>
-         </article>
 
-         <article className="toptiens">
              <button className="ttbutton"
                      onClick={() => setStatus("Shortest")}>
-                 Klik voor de KLEINSTE Helden
+                Kleinste Helden
              </button>
-         </article>
 
-         <article className="toptiens">
              <button className="ttbutton"
                      onClick={() => setStatus("Heaviest")}>
-                 Klik voor de Zwaarste Helden
+                 Zwaarste Helden
              </button>
-         </article>
 
-         <article className="toptiens">
+
              <button className="ttbutton"
                      onClick={() => setStatus("Lightest")}>
-                 Klik voor de Lichtste Helden
+                 top 100 Lichtste Helden
              </button>
-         </article>
+
   </span>
-
-
-
-         {Object.keys(yourHero).length > 0 &&
-             <>
-                 <div className="posts">
-                     <h1>Hier is jouw Top Tien: {yourHero.length}</h1>
+         <div className="hetrestje">
+             {Object.keys(yourHero).length > 0 &&
+                 <>
+                     <article className="response">
+                     <div className="posts">
                      <ol>
-                         {yourHero.slice(0,100).map((posts) => {
-                             return <li className="lijsten">
-                                 <Link to={`/findyourhero/${posts.id}`}>
-                                 <p> naam: {posts.name} </p>
-                                 {/*<p> foto: {posts.images.xs}</p>*/}
-{/*
-                                 //hier een link omheen zetten met useParams, die informatie van held.id weer gebruikt als api call
-*/}
-                                 {status === "Speed" && "Snelheid: " + posts.powerstats.speed }
-                                 {status === "Slow" && "Sneldheid: " + posts.powerstats.speed}
-                                 {status === "Strong" && "Kracht: " + posts.powerstats.strength}
-                                 {status === "Weak" && "Kracht: " + posts.powerstats.strength}
-                                 {status === "Intelligence" && "Intelligentie: " + posts.powerstats.intelligence}
-                                 {status === "Stupidity" && "Intelligentie: " + posts.powerstats.intelligence}
-                                 {status === "Fight" && "Vechtvaardigheid: " + posts.powerstats.combat}
-                                 {status === "FightBad" && "Vechtvaardigheid: " + posts.powerstats.combat}
-                                 {status === "Durability" && "Uithoudingsvermogen: " + posts.powerstats.durability}
-                                 {status === "DurabilityBad" && "Uithoudingsvermogen: " + posts.powerstats.durability}
-                                 {status === "Tallest" && "Lengte: " + posts.appearance.height[1]}
-                                 {status === "Shortest" && "Lengte: " + posts.appearance.height[1]}
-                                 {status === "Heaviest" && "Gewicht: " + posts.appearance.weight[0]}
-                                 {status === "Lightest" && "Gewicht: " + posts.appearance.weight[0]}
-                             </Link>
-                             </li>
-                         })}
-                         })}
-                     </ol>
-                 </div>
+                             {yourHero.slice(0,100).map((posts) => {
+                                 return <li className="lijsten">
+                                     <Link to={`/findyourhero/${posts.id}`}>
+                                         <h3> {posts.name} </h3>
+                                         <img src={posts.images.sm} alt="muckshot" className="heldplaatje"/>
+                                         <p className="vaardigheden">
+                                             {status === "Speed" && "Snelheid: " + posts.powerstats.speed }
+                                             {status === "Slow" && "Sneldheid: " + posts.powerstats.speed}
+                                             {status === "Strong" && "Kracht: " + posts.powerstats.strength}
+                                             {status === "Weak" && "Kracht: " + posts.powerstats.strength}
+                                             {status === "Intelligence" && "Intelligentie: " + posts.powerstats.intelligence}
+                                             {status === "Stupidity" && "Intelligentie: " + posts.powerstats.intelligence}
+                                             {status === "Fight" && "Vechtvaardigheid: " + posts.powerstats.combat}
+                                             {status === "FightBad" && "Vechtvaardigheid: " + posts.powerstats.combat}
+                                             {status === "Durability" && "Uithoudingsvermogen: " + posts.powerstats.durability}
+                                             {status === "DurabilityBad" && "Uithoudingsvermogen: " + posts.powerstats.durability}
+                                             {status === "Tallest" && "Lengte: " + (posts.appearance.height[1])}
+                                             {status === "Shortest" && "Lengte: " + posts.appearance.height[1]}
+                                             {status === "Heaviest" && "Gewicht in kilo: " + (Math.round(posts.appearance.weight[0].replaceAll(" lb", "")* 0.453592))}
+                                             {status === "Lightest" && "Gewicht in kilo: " + (Math.round(posts.appearance.weight[0].replaceAll(" lb", "")* 0.453592))}
+                                         </p>
+                                     </Link>
+                                 </li>
+                             })}
+                             })}
+                         </ol>
+                     </div>
+                     </article>
 
-               {/*  {Object.keys(yourHero).length > 0 &&
+                     {/*  {Object.keys(yourHero).length > 0 &&
                      <>
                          <div className="posts">
                              <h1>aantal objecten uit de call is: {yourHero.length}</h1>
@@ -234,8 +205,13 @@ const [status, setStatus] = useState('');
                              </ol>
                          </div>*/}
 
-             </>
-         }
+                 </>
+             }
+         </div>
+
+
+
+
 
 
 

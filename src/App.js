@@ -7,8 +7,8 @@ import Register from "./pages/Register";
 import TopTen from "./pages/TopTen";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Home from "./pages/Home/Home";
-import WhichHeroInComic from "./pages/Comic";
-import WhoNeverMet from "./pages/WhoNeverMet";
+import Series from "./pages/Series";
+import SearchHero from "./pages/SearchHero";
 import Login from "./pages/Login";
 
 
@@ -25,10 +25,10 @@ function App() {
                <FindYourHero />
            </Route>
            <Route  path="/whonevermet">
-               <WhoNeverMet />
+               <SearchHero />
            </Route>
            <Route  path="/whichheroincomic">
-               <WhichHeroInComic />
+               <Series />
            </Route>
            <Route path="/register">
                <Register />

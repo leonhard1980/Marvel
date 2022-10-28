@@ -1,0 +1,107 @@
+
+.kop{
+    background: url('../assets/background02.jpg') repeat ;
+    color: #FFFFFF;
+    height: 95vh;
+}
+
+.jouwheld{
+    background: url('../assets/backgroundhero.jpg') no-repeat center center;
+    box-shadow: 4px 4px 6px #000000;
+    border-radius: 18px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+}
+
+.naam{
+    align-self: center;
+}
+
+.heldgegevens{
+    background-color: rgba(015,015,015,0.5);
+    margin-right: 24px;
+    margin-bottom: 16px;
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-bottom: 4px;
+    border-radius: 5px;
+}
+
+.appearance{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.bovenkant{
+    display: flex;
+
+}
+
+.aliases{
+    display: unset;
+    font-size: 1em;
+}
+
+.aliasnamen{
+    font-size: 1em;
+    font-family: Arial;
+}
+
+.afbeelding{
+    width: 240px;
+    border-radius: 8px;
+    border-bottom-right-radius: 23px;
+    margin-right: 16px;
+    margin-left: 24px;
+}
+
+.gegevens{
+    color: orangered;
+    display: flex;
+    flex-direction: row;
+}
+
+.powerstats{
+    color: orangered;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(115,015,015,0.7);
+    padding: 3px;
+}
+.powerstats-container{
+    display: flex;
+    flex-direction: row;
+    margin-right: 24px;
+}
+
+.extrainfo{
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-top: 16px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 0.8em;
+    margin-bottom: 24px;
+    background-color: rgba(010,010,010,0.6);
+}
+
+.records{
+    color: white ;
+    margin-right: 12px;
+}
+
+.foutmelding{
+    background-color: #ED1D24;
+    padding: 21px;
+    width: 250px;
+    margin-top: 21px;
+    margin-left: 23px;
+    border-radius: 5px;
+    text-shadow: 4px 4px 8px #181818;
+    box-shadow: 4px 4px 8px #181818;
+
+
+}

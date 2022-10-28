@@ -1,8 +1,4 @@
-.colums-3 {
-    column-count: 3;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.tekst1 {
+    width: 50%;
 }
 

@@ -21,7 +21,7 @@
 }
 
 .achtergrondlogin{
-    background: url('../assets/background4.jpg') no-repeat ;
+    background: url('../assets/background02.jpg') repeat ;
     color: #FFFFFF;
     height: 100vh;
 }
