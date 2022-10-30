@@ -19,9 +19,8 @@ function SearchHero() {
             const gekozenHeld = response.data.filter((hero) => {
                 if(hero.name === searchQuerie){
                     return true
-                    setError(true)
                 } else {
-                 return false
+                                        return false
                 }
             })
             console.log(gekozenHeld)

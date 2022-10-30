@@ -1,6 +1,6 @@
 
 .kop{
-    background: url('../assets/background02.jpg') repeat ;
+    background: url('../assets/sliderplaatjes/header08.jpg') repeat ;
     color: #FFFFFF;
     height: 95vh;
 }
@@ -9,7 +9,7 @@
     background: url('../assets/backgroundhero.jpg') no-repeat center center;
     box-shadow: 4px 4px 6px #000000;
     border-radius: 18px;
-    width: 600px;
+    width: 610px;
     display: flex;
     flex-direction: column;
     margin-left: 100px;
@@ -21,7 +21,7 @@
 
 .heldgegevens{
     background-color: rgba(015,015,015,0.5);
-    margin-right: 24px;
+    margin-right: 26px;
     margin-bottom: 16px;
     padding-top: 4px;
     padding-left: 4px;
@@ -62,6 +62,8 @@
     color: orangered;
     display: flex;
     flex-direction: row;
+    text-shadow: 4px 4px 8px #181818;
+
 }
 
 .powerstats{

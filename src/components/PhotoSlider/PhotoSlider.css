@@ -131,7 +131,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url('../../assets/sliderplaatjes/header10.jpeg') no-repeat center center fixed;
+    background: url('../../assets/sliderplaatjes/header10.jpeg') no-repeat center center;
     background-size: cover;
     color: white;
     line-height: 1.5;

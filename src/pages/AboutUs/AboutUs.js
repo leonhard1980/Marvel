@@ -14,7 +14,7 @@ function AboutUs() {
                 About us
             </h1>
 
-            <div className="tekst1">
+            <div className="tekstAbout">
                 Deze website is gemaakt voor mijn zoon Julius. De functionaliteit is als volgt: In de toptien-pagina kun je ontdekken welke superhelden in de toptien staan van hun unieke kwaliteiten zoals: kracht, snelheid, maar ook gewicht en lengte.Op de Find your hero kun je alle superheld vinden van Marvel en DC Comics en meer te weten komen over wie ze zijn en wat ze doen. Op de Comic pagina vind je uit in welke Comics jouw favoriete superheld voorkomt. Bij They Never Met , kun je ontdekken welke superhelden jouw held nooit tegenkwamen.
 
             </div>

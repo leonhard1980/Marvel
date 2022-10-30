@@ -1,12 +1,52 @@
 .achtergrond{
-    background: url('../assets/background4.jpg');
+    background: url('../assets/sliderplaatjes/header07.jpg') fixed repeat-y, repeat-x;
     color: #FFFFFF;
-    height: 100vh;
+    height: 160vh;
 }
 
 .uitslag{
-    background-color: #2f2f3b;
+    background: url('../assets/background5.jpg') ;
     margin: 23px;
     padding: 23px;
     box-shadow: 4px 4px 8px #181818;
+    width: 600px;
+
+}
+
+
+.serieslist{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 21px;
+}
+
+.seriesrecords{
+    font-size: 0.5em;
+}
+
+.description{
+    width: 240px;
+    color: orangered;
+    text-shadow: 4px 4px 8px #181818;
+
+}
+
+.portretje{
+    display: flex;
+}
+
+.heldplaatje{
+    margin: 12px;
+    width: 260px;
+}
+
+.aantalSeries{
+    margin: 12px;
+    background-color: rgba(115,015,015,0.4);
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.overzichtje{
+    margin-left: 12px;
 }

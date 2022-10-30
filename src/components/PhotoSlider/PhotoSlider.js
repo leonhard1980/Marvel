@@ -6,7 +6,7 @@ function PhotoSlider({ quote, greatmind, classnaampje }){
     return(
         <div className={classnaampje}>
             <h1>{quote}</h1>
-            <h3> -- {greatmind} -- </h3>
+            <h3>  {greatmind}  </h3>
         </div>
     );
 }

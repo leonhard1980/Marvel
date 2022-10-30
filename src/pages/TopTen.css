@@ -1,6 +1,4 @@
-.response{
-    align-content: center;
-}
+
 
 .posts{
     background-color: #ED1D24;
@@ -46,7 +44,7 @@
 }
 
 .heldplaatje{
-    width: 175px;
+    width: 165px;
     margin-top: 12px;
     box-shadow: 2px 4px 6px #080808;
 }

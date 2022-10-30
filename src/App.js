@@ -24,6 +24,9 @@ function App() {
            <Route path="/findyourhero/:blogId">
                <FindYourHero />
            </Route>
+           <Route path="/serieshero/:resourceURI">
+               <FindYourHero />
+           </Route>
            <Route  path="/whonevermet">
                <SearchHero />
            </Route>
