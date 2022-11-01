@@ -18,8 +18,8 @@ function SearchBarSeries({searchHero}) {
                    value={query}
                    onChange={(e) => setQuery(e.target.value)}
                    placeholder="Zoek jouw held"/>
-            <div> zoek helden zoals: Hulk, Wong, Black Panther of Iron Man.</div>
-                  Let op Case Sensitive
+            <div> zoek Marvel-helden zoals: Hulk, Wong, Black Panther of Iron Man.</div>
+
             <button className="button"
                     type="submit">
                 Zoek

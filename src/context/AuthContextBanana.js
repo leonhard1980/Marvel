@@ -1,10 +1,11 @@
-import React, { createContext,useEffect, useState} from "react";
+import React, { createContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import axios from "axios";
+import jwt_decode from 'jwt-decode';
+import axios from 'axios';
 
 export const AuthContext = createContext({});
 
-function AuthContextProvider({children}){
+function AuthContextProvider({ children }) {
     const [isAuth, toggleIsAuth] = useState({
         isAuth: false,
         user: null,
@@ -12,13 +13,17 @@ function AuthContextProvider({children}){
     });
     const history = useHistory();
 
+    // MOUNTING EFFECT
     useEffect(() => {
         // haal de JWT op uit Local Storage
         const token = localStorage.getItem('token');
+
         // als er WEL een token is, haal dan opnieuw de gebruikersdata op
         if (token) {
-            fetchUserData(token);
+            const decoded = jwt_decode(token);
+            fetchUserData(decoded.sub, token);
         } else {
+            // als er GEEN token is doen we niks, en zetten we de status op 'done'
             toggleIsAuth({
                 isAuth: false,
                 user: null,
@@ -30,8 +35,13 @@ function AuthContextProvider({children}){
     function login(JWT) {
         // zet de token in de Local Storage
         localStorage.setItem('token', JWT);
-        fetchUserData( JWT, '/profile');
-        history.push('/profile');
+        // decode de token zodat we de ID van de gebruiker hebben en data kunnen ophalen voor de context
+        const decoded = jwt_decode(JWT);
+
+        // geef de ID, token en redirect-link mee aan de fetchUserData functie (staat hieronder)
+        fetchUserData(decoded.sub, JWT, '/profile');
+        // link de gebruiker door naar de profielpagina
+        // history.push('/profile');
     }
 
     function logout() {
@@ -41,14 +51,16 @@ function AuthContextProvider({children}){
             user: null,
             status: 'done',
         });
+
         console.log('Gebruiker is uitgelogd!');
         history.push('/');
     }
 
+    // Omdat we deze functie in login- en het mounting-effect gebruiken, staat hij hier gedeclareerd!
     async function fetchUserData(id, token, redirectUrl) {
         try {
             // haal gebruikersdata op met de token en id van de gebruiker
-            const result = await axios.get(`https://frontend-educational-backend.herokuapp.com/api/user${id}`, {
+            const result = await axios.get(`http://localhost:3000/600/users/${id}`, {
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${token}`,
@@ -91,11 +103,11 @@ function AuthContextProvider({children}){
         logout: logout,
     };
 
-    return(
+    return (
         <AuthContext.Provider value={contextData}>
             {isAuth.status === 'done' ? children : <p>Loading...</p>}
         </AuthContext.Provider>
-    )
+    );
 }
 
 export default AuthContextProvider;

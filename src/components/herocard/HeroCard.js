@@ -12,7 +12,7 @@ function HeroCard( { heldfoto, heroName, fullName, height, weight, placeOfBirth,
             <h1 className="naam"> {heroName} </h1>
                     <div className="persoonsgegevens">
                            <span className="heldenplaatje">
-                                <img src={heldfoto} alt="muckshot" />
+                                <img src={heldfoto} alt="muckshot" className="plaatje"/>
                             </span>
                             <span className="naw">
                             <p className="ptje"> Volledige Naam: {fullName} </p>

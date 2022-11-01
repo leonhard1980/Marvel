@@ -2,5 +2,25 @@
     background: url('../../assets/background4.jpg') no-repeat ;
     color: #FFFFFF;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.head{
+    margin-top: 2px;
+    margin-bottom: 21px;
+}
+
+.hometalk{
+    background-color: rgba(211, 0, 0, 0.5);
+    margin: 21px;
+    padding: 21px;
+    border-radius: 12px;
+}
+
+.bodytext{
+    width: 600px;
+    margin-bottom: 12px;
+    margin-top: 12px;
 }

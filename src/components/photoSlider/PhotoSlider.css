@@ -14,12 +14,12 @@
 .topplaatje2 {
     position: relative;
     width: 100%;
-    height: 25vh;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url('../../assets/sliderplaatjes/header02.jpg') no-repeat center center fixed;
+    background: url('../../assets/sliderplaatjes/header02.jpg') no-repeat center center;
     background-size: cover;
     color: white;
     line-height: 1.5;
@@ -140,12 +140,26 @@
 .topplaatje11 {
     position: relative;
     width: 100%;
-    height: 70vh;
+    height: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url('../../assets/sliderplaatjes/header11.jpg') no-repeat center fixed;
+    background: url('../../assets/sliderplaatjes/header11.jpg') no-repeat center;
+    background-size: cover;
+    color: white;
+    line-height: 1.5;
+}
+
+.topplaatje12 {
+    position: relative;
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('../../assets/sliderplaatjes/header12.jpg') no-repeat center;
     background-size: cover;
     color: white;
     line-height: 1.5;

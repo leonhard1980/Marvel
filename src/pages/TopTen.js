@@ -69,6 +69,13 @@ const [status, setStatus] = useState('');
                 break;
             case 'Lightest' :
                 return setYourHero(heroList.sort((a, b) => a.appearance.weight[0].replaceAll(" lb", "") - b.appearance.weight[0].replaceAll(" lb", "")));
+                break;
+            case 'Best' :
+                return setYourHero(heroList.sort((b, a) => (a.powerstats.speed + a.powerstats.strength + a.powerstats.intelligence + a.powerstats.combat + a.powerstats.durability + a.powerstats.power) - ( b.powerstats.speed + b.powerstats.strength + b.powerstats.intelligence + b.powerstats.combat + b.powerstats.durability + b.powerstats.power)));
+                break;
+            case 'Worst' :
+                return setYourHero(heroList.sort((a, b) => (a.powerstats.speed + a.powerstats.strength + a.powerstats.intelligence + a.powerstats.combat + a.powerstats.durability + a.powerstats.power) - ( b.powerstats.speed + b.powerstats.strength + b.powerstats.intelligence + b.powerstats.combat + b.powerstats.durability + b.powerstats.power)));
+
         }
     }
 
@@ -80,7 +87,9 @@ const [status, setStatus] = useState('');
             <Bumper
                 classname="bumper1"
                 tekst="Zoek jouw favoriete top 100"/>
-
+         <Bumper
+             classname="bumper4"
+         />
          <span className="knoppen-container">
 
             <button className="ttbutton"
@@ -148,13 +157,23 @@ const [status, setStatus] = useState('');
                  Zwaarste Helden
              </button>
 
-
              <button className="ttbutton"
                      onClick={() => setStatus("Lightest")}>
-                 top 100 Lichtste Helden
+                 Lichtste Helden
+             </button>
+             <button className="ttbutton"
+                     onClick={() => setStatus("Best")}>
+                 Beste Helden
+             </button>
+              <button className="ttbutton"
+                 onClick={() => setStatus("Worst")}>
+                 Slechtste Helden
              </button>
 
   </span>
+         <Bumper
+             classname="bumper4"
+         />
          <div className="hetrestje">
              {Object.keys(yourHero).length > 0 &&
                  <>
@@ -180,6 +199,8 @@ const [status, setStatus] = useState('');
                                              {status === "Shortest" && "Lengte: " + posts.appearance.height[1]}
                                              {status === "Heaviest" && "Gewicht in kilo: " + (Math.round(posts.appearance.weight[0].replaceAll(" lb", "")* 0.453592))}
                                              {status === "Lightest" && "Gewicht in kilo: " + (Math.round(posts.appearance.weight[0].replaceAll(" lb", "")* 0.453592))}
+                                             {status === "Best" && "Totale score: " + (posts.powerstats.speed + posts.powerstats.strength + posts.powerstats.intelligence + posts.powerstats.combat + posts.powerstats.durability + posts.powerstats.power)}
+                                             {status === "Worst" && "Totale score: " + (posts.powerstats.speed + posts.powerstats.strength + posts.powerstats.intelligence + posts.powerstats.combat + posts.powerstats.durability + posts.powerstats.power)}
                                          </p>
                                      </Link>
                                  </li>

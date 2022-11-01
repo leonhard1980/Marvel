@@ -1,12 +1,9 @@
 import React, {useEffect, useState} from "react";
-import SearchBar from "../components/searchBar/SearchBar";
 import axios from "axios";
 import './Series.css';
-import Bumper from "../components/bumper/Bumper";
-import SearchBarSeries from "../components/searchBar/SearchBarSeries";
+import Bumper from "../../components/bumper/Bumper";
+import SearchBarSeries from "../../components/searchBar/SearchBarSeries";
 import {Link} from "react-router-dom";
-
-
 
 
 
@@ -23,7 +20,7 @@ function Series() {
         async function fetchUserData() {
             try {
                 const response = await axios.get
-                (`http://gateway.marvel.com/v1/public/characters?name=${searchQuerie}&apikey=${process.env.REACT_APP_API_KEY}`);
+                (`http://gateway.marvel.com/v1/public/characters?name=${searchQuerie}&limit=25&apikey=${process.env.REACT_APP_API_KEY}`);
                if (response.data.data.results.length === 0){
                    setError(true)
                    setYourComicHero('')
@@ -43,6 +40,9 @@ function Series() {
                     classname="bumper2"
                     tekst="In welke series speelt jouw superheld?"
                 />
+            <Bumper
+                classname="bumper4"
+            />
 
 {/*
             <h1> er komt data binnen. Lets check! </h1>
@@ -52,7 +52,7 @@ function Series() {
 
 
 
-            <div className="achtergrond">
+            <div className="achtergrondseries">
                 <SearchBarSeries searchHero={setSearchQuerie} />
 
                 {error && <p> held niet gevonden. kies een andere held </p>}
@@ -76,18 +76,17 @@ function Series() {
                 <h3> {yourComicHero.data.results[0].name} komt voor in {yourComicHero.data.results[0].series.available} series: </h3>
                 <h3> {yourComicHero.data.results[0].name} komt voor in {yourComicHero.data.results[0].stories.available} stories: </h3>
                 <h3> {yourComicHero.data.results[0].name} komt in totaal {yourComicHero.data.results[0].stories.available+yourComicHero.data.results[0].series.available+yourComicHero.data.results[0].comics.available} keer voor: </h3>
-                <p> {yourComicHero.data.results[0].series.collectionURI} </p>
                 </div>
 
                 <h2 className="overzichtje">Overzicht series </h2>
                 <ul className="serieslist">
                     {yourComicHero.data.results[0].comics.items.map ((posts) => {
                         return<li>
-                            <Link to={`/serieshero/${posts.resourceURI}`}>
+                                             <p className="seriesrecords"> {posts.name} </p>
 
-                           <p className="seriesrecords"> {posts.name} </p>
-                            </Link>
                         </li>
+                        // hier moet mogelijk een TimeStamp en een Hash.
+                        //offset is 20, dan kun je de volgende twintig doen.
                         // dit met useparams doorlinken naar een nieuw te maken pagina.
                             // waar ik bij topten de id doorgeef,
                         // geef ik nu die resourceURI doorgeven ALS endpoint in een nieuwe async function.
@@ -98,17 +97,19 @@ function Series() {
                 <ul className="serieslist">
                     {yourComicHero.data.results[0].series.items.map ((posts) => {
                         return<li>
-                            <Link to={`/serieshero/${posts.resourceURI}`}>
+{/*
+                            <Link to={`/serieshero?uri=${posts.resourceURI}`}>
+*/}
 
                                 <p className="seriesrecords"> {posts.name} </p>
-                            </Link>
+                       {/*     </Link>*/}
                         </li>
                         // dit met useparams doorlinken naar een nieuw te maken pagina.
                         // waar ik bij topten de id doorgeef,
                         // geef ik nu die resourceURI doorgeven ALS endpoint in een nieuwe async function.
                         // daarachter moet nog de apikey komen (dus in de call naar de database)
-                    })}
-                </ul>
+                            })}
+                </ul> // hier kan fetch more.
             </article>
            </>
             }

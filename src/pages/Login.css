@@ -1,3 +1,18 @@
+.textfield{
+    border: none;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 8px;
+    padding: 4px;
+    font-family: "Arial Black";
+}
+
+.achtergrondlogin{
+    background: url('../assets/background02.jpg') repeat ;
+    height: 100vh;
+    background-color: #ED1D24;
+}
+
 .container{
     background-color: #ED1D24;
     background-image: url('../assets/achtergrond01.jpg');
@@ -11,7 +26,11 @@
     box-shadow: 4px 4px 8px #181818;
 }
 
-.textfield{
+.inputs{
+    font-family: "Arial Black";
+}
+
+.field{
     border: none;
     border-radius: 5px;
     padding: 4px;
@@ -20,27 +39,6 @@
     font-family: "Arial Black";
 }
 
-.achtergrondlogin{
-    background: url('../assets/background02.jpg') repeat ;
-    color: #FFFFFF;
-    height: 100vh;
+.backtoregister{
+    margin-bottom: 55px;
 }
-
-.woordjes{
-    color: #FFFFFF;
-    font-family: "Arial Black";
-    margin-left: 4px;
-}
-
-/*button{
-    background-color: #ED1D24;
-    border-right: none;
-    border-left: none;
-    border-top: none;
-    width: 55px;
-    margin: 12px;
-    height: 24px;
-    border-radius: 5px;
-    color: #FFFFFF;
-    font-family: "Arial Black";
-}*/

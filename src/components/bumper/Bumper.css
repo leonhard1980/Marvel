@@ -39,3 +39,15 @@
     padding: 6px;
 }
 
+.bumper4{
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 5px;
+    color: #FFFFFF;
+    font-family: Marvin;
+    box-shadow: 3px 3px 6px rgba(00, 22, 12, 0.95);
+    padding: 6px;
+}
+

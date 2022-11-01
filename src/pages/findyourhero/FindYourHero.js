@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
-import Bumper from "../components/bumper/Bumper";
+import Bumper from "../../components/bumper/Bumper";
 import axios from "axios";
-import PhotoSlider from "../components/PhotoSlider/PhotoSlider";
+import PhotoSlider from "../../components/photoSlider/PhotoSlider";
 import './FindYourHero.css';
-import HeroCard from "../components/herocard/HeroCard";
+import HeroCard from "../../components/herocard/HeroCard";
 import {Link, useParams} from "react-router-dom";
 
 export function FindYourHero() {
@@ -30,7 +30,7 @@ export function FindYourHero() {
 
         <>
         <Bumper
-            classname="bumper1"
+            classname="bumper2"
         tekst="Dit is de held waar je meer over wilde weten"/>
 
             <div className="achtergrond">
@@ -59,9 +59,9 @@ export function FindYourHero() {
                 </article>
             </div>
 
-            <PhotoSlider
-                classnaampje="topplaatje10"
-            />
+            <Bumper
+                classname="bumper1"
+                />
 
         </>
     );

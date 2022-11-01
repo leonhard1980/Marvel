@@ -1,14 +1,13 @@
 .achtergrondregister{
-    background: url('../assets/background02.jpg') repeat ;
+    background: url('../../assets/background02.jpg') repeat ;
     color: #FFFFFF;
     height: 100vh;
-
 }
 
 
 .container{
     background-color: #ED1D24;
-    background-image: url('../assets/achtergrond01.jpg');
+    background-image: url('../../assets/achtergrond01.jpg');
     margin: 23px;
     border-radius: 5px;
     padding: 13px;
@@ -19,7 +18,11 @@
     box-shadow: 4px 4px 6px #000000;
 }
 
-.textfield{
+.inputs{
+    font-family: "Arial Black";
+}
+
+.field{
     border: none;
     border-radius: 5px;
     padding: 4px;
@@ -28,7 +31,13 @@
     font-family: "Arial Black";
 }
 
-
+.form-button{
+    margin-top: 21px;
+    border-radius: 8px;
+    height: 31px;
+    width: 150px;
+    font-family: "Arial Black";
+}
 
 .woordjes{
     color: #FFFFFF;

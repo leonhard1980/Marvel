@@ -1,112 +1,103 @@
-import { useForm } from 'react-hook-form';
-import React from "react";
-import {Link, useHistory} from "react-router-dom";
-import './Login.css';
+import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
+import axios from 'axios';
 import Bumper from "../components/bumper/Bumper";
-/*
-De informatie die de gebruiker invult wordt verzameld en als postrequest opgestuurd.
-    de servers stuurt een token terug. Daarna is de rest van de logica in de context.
-    Token:
-    - in Local Stoarage plaatsen
-    De juiste gebruikersdata in de state zetten.
-    Authenticatie moet nu op true staan.
+import './Login.css';
+import PhotoSlider from "../components/photoSlider/PhotoSlider";
 
-    */
+function SignIn() {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, toggleError] = useState(false);
+    const { login } = useContext(AuthContext);
 
-function Login() {
-    const [checktandc, toggleChecktandc] = React.useState(false);
-    const { register, handleSubmit, formState: {errors}} = useForm();
+    async function handleSubmit(e) {
+        e.preventDefault();
+        toggleError(false);
 
-    let history = useHistory();
-
-    function onFormSubmit(data){
-        console.log(data);
-    }
-
-    function handleClick(){
-        history.push("./Home");
-    }
-
-/*    async function registerUserData(){
         try {
-            const response = await axios.put('https://frontend-educational-backend.herokuapp.com/.')
-            console.log(response.data);
-            setYourHero(response.data);
-        } catch(e){
+            const result = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signin', {
+                username: username,
+                password: password,
+            });
+            console.log(result.data);
+            login(result.data.accessToken);
+
+        } catch(e) {
             console.error(e);
+            toggleError(true);
         }
-    }*/
+    }
 
-    return(
+    return (
         <>
-<div className="achtergrondlogin">
-        <Bumper
-            classname="bumper2"
-            tekst="Log je nu in om mee te doen!"
-        />
+            <div className="achtergrondlogin">
+                  <Bumper
+                      classname="bumper1"
+                      tekst="Log nu in om mee te doen!"
+                  />
+                <Bumper
+                    classname="bumper4"
+                />
+            <div className="container">
 
-          <article className="buitenste-container">
-
-            <form className="container"
-                  onSubmit={handleSubmit(onFormSubmit)}>
-
-                <span className="woordjes">
-                    email:
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="email-field"
+                       className="inputs">
+                    Username:
                     <input
-                        className="textfield"
-                        type="email"
-                        placeholder="schrijf hier je email"
-                        {...register("email", {required: "email is verplicht"})}
-                        //het email-type, check automatisch al op @, dus hier heb ik geen extra validatie ingebouwd.
+                        type="text"
+                        id="username-field"
+                        value={username}
+                        className="field"
+                        onChange={(e) => setUsername(e.target.value)}
                     />
-                    {errors.email && <p>{errors.email.message}</p>}
-                </span>
-                <span className="woordjes">
-                    Password:
+                </label>
+
+                <label htmlFor="password-field"
+                       className="inputs">
+                    Wachtwoord:
                     <input
-                        className="textfield"
                         type="password"
-                        placeholder="schrijf hier je password"
-                        {...register("password", {required: "Naam is verplicht", maxLength:  {value: 80, message: "Uw naam mag niet langer zijn dan 80 karakters", }})}
+                        id="password-field"
+                        name="password"
+                        value={password}
+                        className="field"
+                        onChange={(e) => setPassword(e.target.value)}
                     />
-                    {errors.password && <p>{errors.password.message}</p>}
-                </span>
+                </label>
+                {error && <p className="error">Combinatie van emailadres en wachtwoord is onjuist</p>}
 
-
-                <p className="checkboxcss">
-                    <input
-                        type="checkbox"
-                        {...register("termsAndConditions")}
-                        checked={checktandc}
-                        onChange={() => toggleChecktandc(!checktandc)}
-                    />
-                    <span className="woordjes">
-                    Akkoord met de voorwaarden
-                    </span>
-                </p>
                 <button
-                    disabled={!checktandc}
                     type="submit"
-                    onClick={handleClick}
+                    className="form-button"
                 >
-                    Send!
+                    Inloggen
                 </button>
-
-                <article>
-                    <Link to="/"> Doorlinken?></Link>
-                </article>
             </form>
+            </div>
+
+
+                <p className="backtoregister">Heb je nog geen account?
+                    <Link to="/register">Registreer</Link> je dan eerst.</p>
+
+                <Bumper
+                    classname="bumper4"
+                />
+
+                <PhotoSlider
+                    classnaampje="topplaatje2"
+                    quote={null}
+                    greatmind="Home of Superhero's"
+                />
+
+                </div>
 
 
 
-          </article>
-            <h1> FORM IS NOT CONNECTED. MAAR WAAROM NIET???</h1>
-</div>
-        </>
+            </>
     );
 }
 
-export default Login;
-
-
-
+export default SignIn;

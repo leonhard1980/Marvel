@@ -7,7 +7,7 @@
 }
 
 .lijsten{
-    width: 300px;
+    width: 325px;
     padding: 24px;
     margin-bottom: 22px;
     border-radius: 5px;
@@ -40,11 +40,23 @@
     background-color: #2f2f3b;
     color: #FFFFFF;
     text-shadow: 4px 4px 6px #000000;
-
 }
 
+.ttbutton:hover{
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0.25rem 1em;
+    border:  none;
+    font-family: "Marvin";
+    background-color: #2f2f3b;
+    color: #ED1D24;
+    text-shadow: 4px 4px 6px #000000;
+}
+
+
 .heldplaatje{
-    width: 165px;
+    width: 160px;
     margin-top: 12px;
     box-shadow: 2px 4px 6px #080808;
 }

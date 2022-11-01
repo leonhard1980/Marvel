@@ -20,18 +20,13 @@ function TopMenu() {
                         <NavLink to="/topten" activeClassName="active-link"> Top 100 </NavLink>
                     </li>
 
-              {/*      <li>
-                        <NavLink to="/findyourhero"
-                                 activeClassName="active-link"> Find Your Hero </NavLink>
-                    </li>*/}
-
                     <li>
-                        <NavLink to="/whonevermet"
+                        <NavLink to="/yourhero"
                                  activeClassName="active-link">Search your Hero</NavLink>
                     </li>
 
                     <li>
-                        <NavLink to="/whichheroincomic"
+                        <NavLink to="/series"
                                  activeClassName="active-link"> Series </NavLink>
                     </li>
 
@@ -44,12 +39,6 @@ function TopMenu() {
                         <NavLink to="/register"
                                  activeClassName="active-link"> Register </NavLink>
                     </li>
-
-            {/*        <li>
-                        <NavLink to="/aboutus"
-                                 activeClassName="active-link"> About Us </NavLink>
-                    </li>*/}
-
 
                 </ul>
 

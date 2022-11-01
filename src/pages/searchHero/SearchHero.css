@@ -1,12 +1,12 @@
 
 .kop{
-    background: url('../assets/sliderplaatjes/header08.jpg') repeat ;
+    background: url('../../assets/sliderplaatjes/header08.jpg') repeat ;
     color: #FFFFFF;
     height: 95vh;
 }
 
 .jouwheld{
-    background: url('../assets/backgroundhero.jpg') no-repeat center center;
+    background: url('../../assets/backgroundhero.jpg') no-repeat center center;
     box-shadow: 4px 4px 6px #000000;
     border-radius: 18px;
     width: 610px;
