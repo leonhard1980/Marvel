@@ -14,14 +14,14 @@ const [status, setStatus] = useState('');
            const response = await axios.get
            ('https://akabab.github.io/superhero-api/api/all.json');
            const gefilterdeHelden = response.data.filter((hero) => {
-               if (/*hero.biography.publisher === 'Dark Horse Comics' ||*/ hero.biography.publisher === 'Superman Prime One-Million' || hero.biography.publisher === 'Marvel Comics' || hero.biography.publisher === 'DC Comics' )
-               if (hero.appearance.height[1] !== '0 cm')
-               if (hero.appearance.height[1] !== '0 kg') // dit filtert een held genaamd 'Dagger' eruit
-               if(hero.appearance.weight[1] !== '0 kg')
-               if(hero.appearance.height[1] !== '62.5 meters') // dit filtert Giganta eruit
-                   if(hero.appearance.height[1] !== '15.2 meters') // dit filtert Utgard-Loki
-                       if(hero.appearance.height[1] !== '366 cm') // dit haalt wolfsbane eruit die véél kleiner is dan 366
-               {
+               if (/*hero.biography.publisher === 'Dark Horse Comics' ||*/ hero.biography.publisher === 'Superman Prime One-Million' || hero.biography.publisher === 'Marvel Comics' || hero.biography.publisher === 'DC Comics')
+                   if (hero.appearance.height[1] !== '0 cm')
+                       if (hero.appearance.height[1] !== '0 kg') // dit filtert een held genaamd 'Dagger' eruit
+                           if (hero.appearance.weight[1] !== '0 kg')
+                               if (hero.appearance.height[1] !== '62.5 meters') // dit filtert Giganta eruit
+                                   if (hero.appearance.height[1] !== '15.2 meters') // dit filtert Utgard-Loki
+                                       if (hero.appearance.height[1] !== '366 cm') // dit haalt wolfsbane eruit die véél kleiner is dan 366
+                                       {
                    return true
                }  else {
                        return false

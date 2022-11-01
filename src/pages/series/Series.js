@@ -12,7 +12,6 @@ function Series() {
     const publicKey = '8a621d214f6703c92354d117a0cdb893';
     const privateKey = 'ee113a5aa21a594a97eeda96adc86766a7b56358';
     const [searchQuerie, setSearchQuerie] = useState('');
-    const [newEndpoint, setNewEndpoint] = useState('');
     const [error, setError ] = useState(false);
 
     useEffect(() => {
@@ -55,7 +54,7 @@ function Series() {
             <div className="achtergrondseries">
                 <SearchBarSeries searchHero={setSearchQuerie} />
 
-                {error && <p> held niet gevonden. kies een andere held </p>}
+                {error && <p className="errormessage"> Held niet gevonden. Is de spelling goed? Is het een Marvelheld? </p>}
 
 
             {Object.keys(yourComicHero).length > 0 &&

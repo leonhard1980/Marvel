@@ -14,9 +14,13 @@
     padding: 23px;
     box-shadow: 4px 4px 8px #181818;
     width: 600px;
-
 }
 
+.errormessage{
+    background-color: #2f2f3b;
+    padding: 5px;
+    border-radius: 5px;
+}
 
 .serieslist{
     display: flex;
