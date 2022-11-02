@@ -3,9 +3,7 @@
     border-radius: 5px;
     padding: 4px;
     margin: 8px;
-    padding: 4px;
-    font-family: "Arial Black";
-}
+ }
 
 .achtergrondlogin{
     background: url('../assets/background02.jpg') repeat ;
@@ -26,9 +24,7 @@
     box-shadow: 4px 4px 8px #181818;
 }
 
-.inputs{
-    font-family: "Arial Black";
-}
+
 
 .field{
     border: none;
@@ -41,4 +37,18 @@
 
 .backtoregister{
     margin-bottom: 55px;
+    font-family: Arial;
+    background-color: #ED1D24;
+    border-radius: 2px;
+    padding: 5px;
+    margin-left: 21px;
+    width: 400px;
+}
+
+.inputs{
+    color: #FFFFFF;
+}
+
+.error{
+    color: #FFFFFF;
 }

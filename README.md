@@ -1,17 +1,11 @@
 installs 
 - npm install
-- npm install react-router-dom@5.2.0 (voor de router)
 - npm install axios
 - npm install react-router-dom (voor tabladen?)
 - npm run build (environment variables 8.2)
-- npm install jwt-decode (voor authenticatie)
-- npm install sass --save-dev (voor SASS en SCSS, nog niet gedaan)
 - npm install react-hook-form
 - npm install jwt-decode
 
-
-is het zo dat:
-- npx nodemon spread-operator.js een paginaatje standalone maakt?
 
 
 
