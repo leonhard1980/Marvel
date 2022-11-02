@@ -37,19 +37,9 @@ function Series() {
         <>
                 <Bumper
                     classname="bumper2"
-                    tekst="In welke series speelt jouw superheld?"
-                />
+                    tekst="In welke series speelt jouw superheld?"/>
             <Bumper
-                classname="bumper4"
-            />
-
-{/*
-            <h1> er komt data binnen. Lets check! </h1>
-            <p> Hier moet met useParam nog een doorlink naar het mysterieuze object. resourceURI : "http://gateway.marvel.com/v1/public/series/13082" </p>
-            <p> Voor iedere serie is het handig om een serie-componentje te maken.</p>
-*/}
-
-
+                classname="bumper4"/>
 
             <div className="achtergrondseries">
                 <SearchBarSeries searchHero={setSearchQuerie} />
@@ -82,33 +72,18 @@ function Series() {
                     {yourComicHero.data.results[0].comics.items.map ((posts) => {
                         return<li>
                                              <p className="seriesrecords"> {posts.name} </p>
-
                         </li>
-                        // hier moet mogelijk een TimeStamp en een Hash.
-                        //offset is 20, dan kun je de volgende twintig doen.
-                        // dit met useparams doorlinken naar een nieuw te maken pagina.
-                            // waar ik bij topten de id doorgeef,
-                        // geef ik nu die resourceURI doorgeven ALS endpoint in een nieuwe async function.
-                        // daarachter moet nog de apikey komen (dus in de call naar de database)
+
                     })}
                 </ul>
                 <h2> Overzicht series: </h2>
                 <ul className="serieslist">
                     {yourComicHero.data.results[0].series.items.map ((posts) => {
                         return<li>
-{/*
-                            <Link to={`/serieshero?uri=${posts.resourceURI}`}>
-*/}
-
                                 <p className="seriesrecords"> {posts.name} </p>
-                       {/*     </Link>*/}
-                        </li>
-                        // dit met useparams doorlinken naar een nieuw te maken pagina.
-                        // waar ik bij topten de id doorgeef,
-                        // geef ik nu die resourceURI doorgeven ALS endpoint in een nieuwe async function.
-                        // daarachter moet nog de apikey komen (dus in de call naar de database)
-                            })}
-                </ul> // hier kan fetch more.
+                                      </li>
+                           })}
+                </ul>
             </article>
            </>
             }
