@@ -20,7 +20,9 @@ De applicatie maakt gebruik van de onderstaande externe libraries. Die kunnen ge
 - npm install jwt-decode
 
 
-.EVN
+is het zo dat:
+- npx nodemon spread-operator.js een paginaatje standalone maakt?
+
 
 Maak voor gebruik een .env bestand aan ter hoogste van de gitignore in de applicatie.
 (Rechtermuis knop -> new -> file, en noem die .evn). 
