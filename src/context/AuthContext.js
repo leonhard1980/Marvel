@@ -13,9 +13,7 @@ function AuthContextProvider({children}){
     const history = useHistory();
 
     useEffect(() => {
-        // haal de JWT op uit Local Storage
         const token = localStorage.getItem('token');
-        // als er WEL een token is, haal dan opnieuw de gebruikersdata op
         if (token) {
             isTokenValid(token);// hier in het if statement kijken of je kan checken of het token geldig is. Door de timestamp te checken. die check zou je in een helperfunctie kunnen zetten. Maak een functie die heet: IsTokenValid. die return true of false.
             fetchUserData(token, null);

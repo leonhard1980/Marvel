@@ -79,7 +79,7 @@ function Series() {
                             <ul className="serieslist">
                                 {yourComicHero.data.results[0].comics.items.map((posts) => {
                                     return <li>
-                                        <p className="seriesrecords"> {posts.name} </p>
+                                        <SerieInfo serieName={posts.name} url={posts.resourceURI}/>
                                     </li>
                                 })}
                             </ul>
