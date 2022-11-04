@@ -1,7 +1,7 @@
 .achtergrondseries{
-    background: url('../../assets/sliderplaatjes/header07.jpg') fixed repeat-y, repeat-x;
+    background: url('../../assets/sliderplaatjes/header07.jpg')  repeat;
     color: #FFFFFF;
-    height: 150vh;
+    height: 200vh;
     margin-top: 0px;
     display: flex;
     flex-direction: column;

@@ -1,7 +1,7 @@
 import React, { createContext,useEffect, useState} from "react";
 import { useHistory } from 'react-router-dom';
 import axios from "axios";
-
+import isTokenValid from "../components/helpers/isTokenValid";
 export const AuthContext = createContext({});
 
 function AuthContextProvider({children}){
@@ -17,7 +17,8 @@ function AuthContextProvider({children}){
         const token = localStorage.getItem('token');
         // als er WEL een token is, haal dan opnieuw de gebruikersdata op
         if (token) {
-            fetchUserData(token);
+            isTokenValid(token);// hier in het if statement kijken of je kan checken of het token geldig is. Door de timestamp te checken. die check zou je in een helperfunctie kunnen zetten. Maak een functie die heet: IsTokenValid. die return true of false.
+            fetchUserData(token, null);
         } else {
             toggleIsAuth({
                 isAuth: false,
@@ -45,10 +46,10 @@ function AuthContextProvider({children}){
         history.push('/');
     }
 
-    async function fetchUserData(id, token, redirectUrl) {
+    async function fetchUserData(token, redirectUrl) {
         try {
             // haal gebruikersdata op met de token en id van de gebruiker
-            const result = await axios.get(`https://frontend-educational-backend.herokuapp.com/api/user${id}`, {
+            const result = await axios.get('https://frontend-educational-backend.herokuapp.com/api/user', {
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${token}`,

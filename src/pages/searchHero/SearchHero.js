@@ -100,13 +100,6 @@ function SearchHero() {
                 </>
             }
             </div>
-
-
-      {/*      <Bumper
-                classname="bumper1"
-                tekst="Zoek je favoriete superheld"
-            />*/}
-
         </>
     )
 };

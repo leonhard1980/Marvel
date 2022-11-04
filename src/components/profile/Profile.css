@@ -1,0 +1,24 @@
+.profile-background{
+    background: url('../../assets/background02.jpg') repeat ;
+    height: 100vh;
+}
+
+.containerprofile{
+    padding: 21px;
+    background-image: url('../../assets/achtergrond01.jpg');
+    width: 400px;
+    border-radius: 8px;
+    margin-left: 34px;
+    margin-top: 45px;
+    box-shadow: 4px 4px 8px #181818;
+
+}
+
+.profile-text{
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}
+
+.profilekop{
+    margin-bottom: 12px;
+}

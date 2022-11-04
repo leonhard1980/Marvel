@@ -1,27 +1,15 @@
 import React from "react";
-import {Link, useHistory} from "react-router-dom";
+import { useHistory} from "react-router-dom";
 import './Register.css';
 import {useState} from "react";
 import Bumper from "../../components/bumper/Bumper";
 import axios from "axios";
 
-//1 maak een async naar novi server. stuur: email(@), username en wachtwoord(6)
-// 2 doorlinken naar login.
-// 3 daar inloggen met username en wachtwoord (dus niet email)
-// DAN krijg je het token. En DAARMEE krijg je een uniek accessToken. (als je DIE krijgt, dan pas kun je door naar de rest).
-// doe niet PRECIES hetzelfde als in banana-security, maar check in de novibackend documentatie hoe ik het kan aanpakken.
-// ik heb useForm gebruikt (wat anders is dan de useState in bananasecurity.
-
-// dat token gebruik je om:
-// 1. localStorage om te voorkomen dat je uitlogt bij refresh
-// 2. om toegang te krijgen tot SERIES.
-// 3. kijk dan naar de laatste les REACT.
 
 function Register() {
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    // state voor functionaliteit
     const [error, toggleError] = useState(false);
     const [loading, toggleLoading] = useState(false);
     const history = useHistory();
@@ -38,7 +26,6 @@ function Register() {
                     username: username,
                 });
             console.log(result);
-            // als alles goed gegaan is, linken we door naar de login-pagina
             history.push('/login');
         } catch(e) {
             console.error(e);

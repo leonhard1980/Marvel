@@ -5,22 +5,19 @@ import TopMenu from "./components/Topmenu";
 import {Switch, Route, Redirect} from "react-router-dom";
 import FindYourHero from "./pages/findyourhero/FindYourHero";
 import Register from "./pages/register/Register";
-import TopTen from "./pages/TopTen";
+import TopTen from "./pages/topten/TopTen";
 import AboutUs from "./pages/aboutus/AboutUs";
-import Home from "./pages/Home/Home";
+import Home from "./pages/home/Home";
 import Series from "./pages/series/Series";
 import SearchHero from "./pages/searchHero/SearchHero";
-import Login from "./pages/Login";
-import Profile from './pages/Profile';
-
-
+import Login from "./pages/login/Login";
+import Profile from './components/profile/Profile';
 
 function App() {
     const { isAuth } = useContext(AuthContext);
 
     return (
    <>
-
        <TopMenu/>
        <Switch>
            <Route  path="/topten">
@@ -44,20 +41,14 @@ function App() {
            </Route>
            <Route  path="/series">
                <Series />
-              {/* {isAuth ? <Series /> : <Redirect to="/" />}*/}
-           </Route>
+               </Route>
            <Route path="/profile">
                {isAuth ? <Profile /> : <Redirect to="/" />}
            </Route>
-
-
            <Route exact path="/">
                <Home />
            </Route>
-
        </Switch>
-
-
    </>
   );
 }

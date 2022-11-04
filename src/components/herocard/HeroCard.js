@@ -1,12 +1,10 @@
 import React from "react";
 import './HeroCard.css';
-import Bumper from "../bumper/Bumper";
 
 function HeroCard( { heldfoto, heroName, fullName, height, weight, placeOfBirth,
                        alignment, publisher, occupation, duration, combat, intelligence, speed, power, strength}) {
     return(
         <>
-
 
             <div className="herokaartje">
             <h1 className="naam"> {heroName} </h1>

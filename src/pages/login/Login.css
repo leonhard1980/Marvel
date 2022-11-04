@@ -1,0 +1,54 @@
+.textfield{
+    border: none;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 8px;
+ }
+
+.achtergrondlogin{
+    background: url('../../assets/background02.jpg') repeat ;
+    height: 100vh;
+    background-color: #ED1D24;
+}
+
+.container{
+    background-color: #ED1D24;
+    background-image: url('../../assets/achtergrond01.jpg');
+    margin: 23px;
+    border-radius: 5px;
+    padding: 13px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    box-shadow: 4px 4px 8px #181818;
+}
+
+
+
+.field{
+    border: none;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 8px;
+    padding: 4px;
+    font-family: "Arial Black";
+}
+
+.backtoregister{
+    margin-bottom: 55px;
+    font-family: Arial;
+    background-color: #ED1D24;
+    border-radius: 2px;
+    padding: 5px;
+    margin-left: 21px;
+    width: 400px;
+}
+
+.inputs{
+    color: #FFFFFF;
+}
+
+.error{
+    color: #FFFFFF;
+}

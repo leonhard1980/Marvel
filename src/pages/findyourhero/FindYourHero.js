@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Bumper from "../../components/bumper/Bumper";
 import axios from "axios";
-import PhotoSlider from "../../components/photoSlider/PhotoSlider";
 import './FindYourHero.css';
 import HeroCard from "../../components/herocard/HeroCard";
 import {Link, useParams} from "react-router-dom";
@@ -23,7 +22,7 @@ export function FindYourHero() {
        }
    }
        fetchHeroData();
-       console.log(yourHero);}, [] );
+       console.log(yourHero);}, [blogId] );
 
 
     return (

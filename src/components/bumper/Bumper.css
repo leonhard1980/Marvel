@@ -9,7 +9,8 @@
     align-items: center;
     height: 45px;
     color: #FFFFFF;
-    font-family: Marvin;
+    font-family: "Marvin", "Acumin Pro Ultra Black", "Berlin Sans FB Demi", serif;
+
     text-shadow: 3px 3px 6px rgba(22, 22, 52, 0.95);
     padding: 6px;
 }
@@ -22,7 +23,7 @@
     align-items: center;
     height: 45px;
     color: #ED1D24;
-    font-family: Marvin;
+    font-family: Marvin, Acumin Pro Ultra Black, Berlin Sans FB Demi, serif ;
     text-shadow: 3px 3px 6px rgba(22, 22, 52, 0.95);
     padding: 6px;
 }
@@ -34,7 +35,7 @@
     align-items: center;
     height: 45px;
     color: #FFFFFF;
-    font-family: Marvin;
+    font-family: Marvin, Acumin Pro Ultra Black, Berlin Sans FB Demi, serif;
     text-shadow: 3px 3px 6px rgba(22, 22, 52, 0.95);
     padding: 6px;
 }
@@ -46,7 +47,7 @@
     align-items: center;
     height: 5px;
     color: #FFFFFF;
-    font-family: Marvin;
+    font-family: Marvin, Acumin Pro Ultra Black, Berlin Sans FB Demi, serif;
     box-shadow: 3px 3px 6px rgba(00, 22, 12, 0.95);
     padding: 6px;
 }

@@ -1,10 +1,10 @@
 .achtergrond{
     margin-top: 0px;
-    background: url('../../assets/background4.jpg');
+    background: url('../../assets/background4.jpg') repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 78vh;
+    height: 79vh;
 }
 
 .buffer{

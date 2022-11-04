@@ -1,45 +1,42 @@
-installs 
+Inhoud:
+-Inleiding
+-Installs
+-.evn
+-Functionaliteiten
+-Api's
+
+INLEIDING
+Deze applicatie is geschreven in Webstorm. Voor verdere ontwikkeling van deze site
+is het noodzakelijk een IDE te hebben.
+
+
+INSTALLS 
+De applicatie maakt gebruik van de onderstaande externe libraries. Die kunnen geinstalleerd worden met de volgende commando's in de terminal
 - npm install
-- npm install react-router-dom@5.2.0 (voor de router)
 - npm install axios
 - npm install react-router-dom (voor tabladen?)
 - npm run build (environment variables 8.2)
-- npm install jwt-decode (voor authenticatie)
-- npm install sass --save-dev (voor SASS en SCSS, nog niet gedaan)
 - npm install react-hook-form
 - npm install jwt-decode
 
 
-is het zo dat:
-- npx nodemon spread-operator.js een paginaatje standalone maakt?
+.EVN
 
-
-
-Maak voor gebruik een .env bestandje aan ter hoogste van de gitignore in de applicatie
-vul deze met eigen key conform de syntax op .evn.dist 
-Draai een npm run build in de terminal om deze te installeren in het project.
+Maak voor gebruik een .env bestand aan ter hoogste van de gitignore in de applicatie.
+(Rechtermuis knop -> new -> file, en noem die .evn). 
+Vul deze met eigen key conform de syntax op .evn.dist 
 Deze key is te verkrijgen door in te schrijven op: https://developer.marvel.com/docs
-Schrijf deze apikey in je eigen .evn bestand zoals beschreven in .evn.dist
+Jouw key wordt nu meegenomen in de apicall naar de Marvel database.
+Draai een npm run build in de terminal om deze te installeren in het project.
 
-- FUNCTIONALITEITEN
-1) ZOEK JE SUPERHELD (EN MAAK EEN MOOI PLAATJE DAARVAN)
-2) WELKE HELDEN KOMEN VOOR IN EEN GENOEMDE COMIC? (LIJSTJE)
-3) ALS JE DAAROP DOORKLIKT: WEER BIOGRAFIE VAN EEN SUPERHELD
-4) INLOGGEN EN AUTHENTICATIE
-5) TOP TIENS (GROOTSTE, STERKSTE, LANGSTE, SNELSTE SUPERHELDEN)
+FUNCTIONALITEITEN
 
+1) ZOEK JOUW SUPERHELD (Search your Hero)
+2) IN HOEVEEL COMICS, SERIES EN STORIES KOMT EEN MARVEL-HELD VOOR (SERIES)
+3) INLOGGEN, UITLOGGEN EN AUTHENTICATIE
+4) TOP 100'S (GROOTSTE, STERKSTE, LANGSTE, SNELSTE SUPERHELDEN)
 
-
-Voor het inloggen heb je de NOVI backend nodig
-https://github.com/hogeschoolnovi/novi-educational-backend-documentation/blob/main/README.md#rest-endpoints
-Dit lijkt op de BANANA Security Opdracht. Die authenticatie kun je praktisch nabouwen, maar de endpoint is anders.
-https://github.com/hogeschoolnovi/frontend-react-banana-security-professional-uitwerkingen
-
-
-
-git@github.com:hogeschoolnovi/frontend-react-private-blog-uitwerkingen.git
-Deze kun je gebruiken voor om te kijken hoe het met useParam werkt.
-
+API's
 
 _DEZE APPLICATIE MAAKT GEBRUIK VAN 2 API'S_
 1. VOOR ECHTE INFO OVER HELDEN
@@ -51,3 +48,5 @@ _DEZE APPLICATIE MAAKT GEBRUIK VAN 2 API'S_
 - RATE LIMIT: 3000
 Hierboven staan de public en private keys. Normaal gesproken push je die niet mee.
 Dan zou ik schrijven: maak een account aan bij: https://developer.marvel.com/docs voor een eigen APIKEY
+
+Als je bovenstaande instructies doorneemt, zou de apllicatie moeten werken. Succes!

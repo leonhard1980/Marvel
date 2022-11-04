@@ -1,7 +1,6 @@
 import React from "react";
 import './Home.css';
 import Bumper from "../../components/bumper/Bumper";
-import SearchHero from "../searchHero/SearchHero";
 import PhotoSlider from "../../components/photoSlider/PhotoSlider";
 
 

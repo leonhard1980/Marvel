@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import Bumper from "../../components/bumper/Bumper";
 import PhotoSlider from "../../components/photoSlider/PhotoSlider";
 
@@ -27,7 +27,7 @@ function AboutUs() {
                         antwoord te bieden. Ik hoop dat ik daarin geslaagd ben.
                     </p>
                     <PhotoSlider
-                        classnaampje="topplaatje11"
+                        classnaampje="topplaatje3"
                         quote={null}
                     />
 
